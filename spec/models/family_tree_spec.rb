@@ -19,4 +19,8 @@ RSpec.describe FamilyTree, type: :model do
       expect(FactoryBot.create(:family_tree)).to be_valid
     end
   end
+
+  describe 'Faker' do
+    
+  end
 end
