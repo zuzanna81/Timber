@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20180129200207) do
     t.integer "date_of_birth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
 end

@@ -23,19 +23,19 @@ RSpec.describe FamilyTree, type: :model do
       expect(FactoryBot.create(:family_tree)).to be_valid
     end
   end
-
-describe 'Faker' do
-  5.times do
-    FamilyTree.create([{
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      relationship: Faker::HowIMetYourMother.character,
-      date_of_birth: Faker::Date.birthday(0, 100)
-      }])
-    end
-
-    it 'should return collection of family members' do
-      expect(FamilyTree.count).to be(5)
-    end
-  end
 end
+
+# describe 'Faker' do
+#   5.times do
+#     FamilyTree.create([{
+#       first_name: Faker::Name.first_name,
+#       last_name: Faker::Name.last_name,
+#       relationship: Faker::HowIMetYourMother.character,
+#       date_of_birth: Faker::Date.birthday(0, 100)
+#       }])
+#     end
+#
+#     it 'should return collection of family members' do
+#       expect(FamilyTree.count).to be(5)
+#     end
+#   end
