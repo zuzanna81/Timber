@@ -3,7 +3,7 @@ FactoryBot.define do
     first_name "MyName"
     surname "SurName"
     relationship "MyString"
-    date_of_birth
+    date_of_birth 2000-01-01
 
   end
 end
