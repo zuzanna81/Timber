@@ -22,6 +22,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'coveralls', require: false
   gem 'launchy'
+  gem 'faker'
 end
 
 group :development do
