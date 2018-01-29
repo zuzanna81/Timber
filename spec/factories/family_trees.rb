@@ -4,5 +4,6 @@ FactoryBot.define do
     last_name { Faker::Name.last_name }
     relationship { Faker::HowIMetYourMother.character }
     date_of_birth 2000-01-01
+    image
   end
 end
