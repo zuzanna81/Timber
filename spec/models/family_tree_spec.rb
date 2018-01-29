@@ -1,5 +1,7 @@
 require 'rails_helper'
 require 'faker'
+# require 'database_cleaner'
+require 'factory_bot_rails'
 
 RSpec.describe FamilyTree, type: :model do
   describe 'DB table' do
@@ -31,7 +33,7 @@ describe 'Faker' do
       }])
     end
 
-    it 'should return family members' do
+    it 'should return collection of family members' do
       expect(FamilyTree.count).to be(5)
     end
   end
