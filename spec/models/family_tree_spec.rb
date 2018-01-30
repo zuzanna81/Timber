@@ -10,6 +10,7 @@ RSpec.describe FamilyTree, type: :model do
     it { is_expected.to have_db_column :relationship }
     it { is_expected.to have_db_column :date_of_birth }
     it { is_expected.to have_db_column :image }
+    it { is_expected.to have_db_column :ancestry }
   end
 
   describe 'Validations' do
