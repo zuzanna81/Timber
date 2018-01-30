@@ -3,9 +3,6 @@ class Member < ApplicationRecord
   validates_presence_of :first_name
 
   belongs_to :family_tree
-  has_many :relationships
-
-  #parent_relationship
-  #child_relationship 
-
+  has_many :relationship
+  has_ancestry
 end
