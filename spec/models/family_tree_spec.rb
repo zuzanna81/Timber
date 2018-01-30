@@ -27,12 +27,7 @@ end
 
 # describe 'Faker' do
 #   5.times do
-#     FamilyTree.create([{
-#       first_name: Faker::Name.first_name,
-#       last_name: Faker::Name.last_name,
-#       relationship: Faker::HowIMetYourMother.character,
-#       date_of_birth: Faker::Date.birthday(0, 100)
-#       }])
+#       FactoryBot.create(:family_tree)
 #     end
 #
 #     it 'should return collection of family members' do
