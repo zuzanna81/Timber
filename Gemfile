@@ -24,6 +24,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'coveralls', require: false
   gem 'launchy'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
 end
 
 group :development do

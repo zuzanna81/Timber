@@ -26,6 +26,6 @@
     "test": "jest"
   },
   "jest": {
-    "rootDir": "./app/javascript/components"
+    "rootDir": "./app/javascript/components/"
   }
 }
