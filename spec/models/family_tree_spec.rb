@@ -1,6 +1,5 @@
 require 'rails_helper'
 require 'faker'
-# require 'database_cleaner'
 require 'factory_bot_rails'
 
 RSpec.describe FamilyTree, type: :model do
@@ -23,14 +22,14 @@ RSpec.describe FamilyTree, type: :model do
       expect(FactoryBot.create(:family_tree)).to be_valid
     end
   end
-end
 
-# describe 'Faker' do
-#   5.times do
-#       FactoryBot.create(:family_tree)
-#     end
-#
-#     it 'should return collection of family members' do
-#       expect(FamilyTree.count).to be(5)
-#     end
-#   end
+  describe "db seed tests" do
+    before(:each) do
+      load "#{Rails.root}/db/seeds.rb"
+    end
+
+    it 'should return collection of family members' do
+      expect(FamilyTree.count).to be(5)
+    end
+  end
+end

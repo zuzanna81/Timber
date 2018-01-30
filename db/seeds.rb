@@ -6,11 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# 5.times do
-#   FamilyTree.create([{
-#     first_name: Faker::Name.first_name
-#     last_name: Faker::Name.last_name
-#     relationship: Faker::HowIMetYourMother.character
-#     date_of_birth: Faker::Date.birthday(0, 100)
-#     }])
-#   end
+5.times do
+  FactoryBot.create(:family_tree)
+end
