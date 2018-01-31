@@ -26,6 +26,8 @@ def page_path_from(page_name)
   case page_name.downcase
     when 'sign up'
       new_user_registration_path
+    when 'family'
+      family_show_path
     else
       root_path
   end
