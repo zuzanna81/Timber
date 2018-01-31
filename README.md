@@ -5,8 +5,17 @@ Final project for Craft Academy October 2017 Cohort.
 ## Description
 _[TODO: Add description]_
 ## Contributors
+Francesco Falchi: https://github.com/NegativeKarma
+Lisa Eriksson: https://github.com/lcegit
+Sophie Sjöberg: https://github.com/sophiesjoberg
+Zuzanna Bienkowska: https://github.com/zuzanna81/
+During the project we had help from:
+https://github.com/magnus-thor/  https://github.com/tochman
+https://github.com/faraznaeem  https://github.com/diraulo
 _[TODO: Add contributor list]_
 ## Technologies
+Ruby on Rails
+Bootstrap
 [_TODO: Add list of technologies used in project ]_
 ## Installation
 _[TODO: Add installation and setup instructions]_
@@ -25,12 +34,12 @@ $ cucumber
 
 ### Unit tests
 #### React Components
-This project makes use of React components to offer a rich user experience. 
+This project makes use of React components to offer a rich user experience.
 
-Unit tests for React components are stored in `app/javascript/components/tests` 
+Unit tests for React components are stored in `app/javascript/components/tests`
 
 A sample component with a test can look like this:
-``javascript
+```javascript
 import React, {Component} from "react"
 import PropTypes from "prop-types"
 class HelloWorld extends Component {
