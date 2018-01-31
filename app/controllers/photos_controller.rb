@@ -11,6 +11,7 @@ class PhotosController < ApplicationController
   def create
     if @photo.save
       flash[:notice] = "Successfully created a new photo!"
+      redirect_to photo_path
     else
       flash[:alert] = "Error, no photo was created"
       render :new
