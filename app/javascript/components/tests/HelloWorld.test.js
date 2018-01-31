@@ -7,9 +7,9 @@ import {mount} from 'enzyme'
 
 Enzyme.configure({ adapter: new Adapter() });
 
-let wrapper, contact;
+let wrapper;
 
-describe('<ContactCard />', ()=>{
+describe('<HelloWorld />', ()=>{
     beforeEach(() => {
         wrapper = mount(<HelloWorld greeting={'Thomas'}/>);
     });
