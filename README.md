@@ -13,7 +13,7 @@ _[TODO: Add installation and setup instructions]_
 ## Testing
 
 ### Acceptance test
-Acceptance test are written in Cucumber using Capybara and Chrome in headless state.
+Acceptance test are written in Cucumber using Capybara and Selenium with Chrome Driver in headless state.
 
 Features are stored in `./features`
 
