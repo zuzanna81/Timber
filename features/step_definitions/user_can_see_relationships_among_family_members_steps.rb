@@ -1,5 +1,5 @@
 Given("I visit the family tree page") do
-  visit family_tree_path
+  visit family_tree
 end
 
 When("I click {string}") do |string|
