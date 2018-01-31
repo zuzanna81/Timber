@@ -18,6 +18,8 @@
 
 .byebug_history
 coverage
+/coverage.data
+/coverage/
 .DS_Store
 /public/packs
 /public/packs-test
