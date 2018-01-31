@@ -4,8 +4,9 @@ Feature: User can upload attached file
   I would like to be able to attach a local file and upload it
 
   Scenario: User can upload attached file
-    When I visit index page
-    Then I see upload photo form
-    And I attach file "Lisa.jpeg"
+    When I visit photo page
+    Then show me the page
+    And I fill in "Title" with "Something"
+    And I upload file "Lisa.jpeg"
     And I click on upload button
     Then I should see attached file "Lisa.jpeg"
