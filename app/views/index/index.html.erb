@@ -3,3 +3,6 @@
 <p>
   Photo sharing
 </p>
+<%= form_for @ do |f| %>
+  <%= f.file_name :picture %>
+<% end %>

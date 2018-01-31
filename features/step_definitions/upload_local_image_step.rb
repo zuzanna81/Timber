@@ -1,9 +1,5 @@
-When("I visit photo album page") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 Then("I see upload photo form") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content
 end
 
 Then("I attach file {string}") do |string|
