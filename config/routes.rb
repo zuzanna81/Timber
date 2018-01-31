@@ -1,4 +1,3 @@
 Rails.application.routes.draw do
-  root controller: :welcome, action: :index
-
+  root controller: :index, action: :index
 end
