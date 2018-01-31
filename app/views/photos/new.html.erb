@@ -1,7 +1,7 @@
 <div class="page-header"><h1>Upload Photo</h1></div>
 
 <%= form_for @photo do |f| %>
-  <%= render 'shared/errors', object: @photo %>
+  <%= render 'partials/errors', object: @photo %>
 
   <div class="form-group">
     <%= f.label :title %>
