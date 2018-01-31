@@ -23,5 +23,7 @@ module Timber
     end
     config.load_defaults 5.1
     config.generators.system_tests = nil
+    config.react.variant = :production
+    config.react.addons = true
   end
 end

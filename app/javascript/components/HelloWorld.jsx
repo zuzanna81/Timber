@@ -13,4 +13,5 @@ class HelloWorld extends Component {
 HelloWorld.propTypes = {
   greeting: PropTypes.string
 };
+
 export default HelloWorld
