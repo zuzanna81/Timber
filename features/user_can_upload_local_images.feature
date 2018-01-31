@@ -6,6 +6,6 @@ Feature: User can upload attached file
   Scenario: User can upload attached file
     When I visit photo page
     And I fill in "Title" with "Something"
-    # And I upload file "Lisa.jpeg"
+    And I upload file "random.png"
     # And I click on upload button
     # Then I should see attached file "Lisa.jpeg"
