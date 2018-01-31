@@ -20,6 +20,10 @@
 coverage
 /coverage.data
 /coverage/
+.coverage
+.resultset.json
+.last_run.json
+.resultset.json.lock
 .DS_Store
 /public/packs
 /public/packs-test

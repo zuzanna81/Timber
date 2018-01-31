@@ -61,7 +61,7 @@
   },
   "Cucumber Features": {
     "coverage": {
-      "/Users/smiley/Projects/timber/app/models/user.rb": [
+      "/Users/lisaeriksson/Documents/projects/Timber/app/models/user.rb": [
         1,
         null,
         null,
@@ -69,60 +69,70 @@
         null,
         null
       ],
-      "/Users/smiley/Projects/timber/app/models/application_record.rb": [
+      "/Users/lisaeriksson/Documents/projects/Timber/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/smiley/Projects/timber/app/controllers/index_controller.rb": [
+      "/Users/lisaeriksson/Documents/projects/Timber/app/controllers/index_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/smiley/Projects/timber/app/controllers/application_controller.rb": [
+      "/Users/lisaeriksson/Documents/projects/Timber/app/controllers/application_controller.rb": [
         1,
+        1,
+        null,
+        null
+      ],
+      "/Users/lisaeriksson/Documents/projects/Timber/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/smiley/Projects/timber/app/helpers/application_helper.rb": [
+      "/Users/lisaeriksson/Documents/projects/Timber/app/controllers/registrations_controller.rb": [
         1,
+        1,
+        null,
+        1,
+        1,
+        null,
         null
       ],
-      "/Users/smiley/Projects/timber/app/channels/application_cable/channel.rb": [
+      "/Users/lisaeriksson/Documents/projects/Timber/app/controllers/family_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/lisaeriksson/Documents/projects/Timber/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/smiley/Projects/timber/app/channels/application_cable/connection.rb": [
+      "/Users/lisaeriksson/Documents/projects/Timber/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/smiley/Projects/timber/app/controllers/family_controller.rb": [
+      "/Users/lisaeriksson/Documents/projects/Timber/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/lisaeriksson/Documents/projects/Timber/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/smiley/Projects/timber/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/Users/smiley/Projects/timber/app/mailers/application_mailer.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/smiley/Projects/timber/app/models/family_tree.rb": [
+      "/Users/lisaeriksson/Documents/projects/Timber/app/models/family_tree.rb": [
         0,
         0,
         0
       ]
     },
-    "timestamp": 1517427303
+    "timestamp": 1517433881
   }
 }
