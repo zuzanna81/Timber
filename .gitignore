@@ -25,7 +25,7 @@ coverage
 .resultset.json
 .last_run.json
 .resultset.json.lock
-=======
+
 /coverage
 
 .DS_Store

@@ -213,7 +213,7 @@ GEM
       execjs
       railties (>= 3.2)
       tilt
-<<<<<<< HEAD
+
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -221,8 +221,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-=======
->>>>>>> 36772f18435e6d164183b21f3e3f8f94df2a2f7f
+
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -288,14 +287,13 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.5)
       execjs (>= 0.3.0, < 3)
-<<<<<<< HEAD
+
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.4)
     warden (1.2.7)
       rack (>= 1.0)
-=======
->>>>>>> 36772f18435e6d164183b21f3e3f8f94df2a2f7f
+
     web-console (3.5.1)
       actionview (>= 5.0)
       activemodel (>= 5.0)
