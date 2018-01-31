@@ -7,5 +7,6 @@ Feature: User can upload attached file
     When I visit photo page
     And I fill in "Title" with "Something"
     And I upload file "random.png"
-    # And I click on upload button
+    And I click on "Upload" button
+    # Then I should be redirected to the "Photoindex" page
     # Then I should see attached file "Lisa.jpeg"
