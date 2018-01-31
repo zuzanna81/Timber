@@ -6,4 +6,4 @@ Feature: User can visit landing page
   @javascript
   Scenario: User visits landing page
     When I visit the landing page
-    Then I would like to see "Greeting"
+    Then I would like to see "Hello Thomas"

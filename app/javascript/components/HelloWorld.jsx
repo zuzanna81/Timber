@@ -1,10 +1,10 @@
-import React from "react"
+import React, {Component} from "react"
 import PropTypes from "prop-types"
-class HelloWorld extends React.Component {
+class HelloWorld extends Component {
   render () {
     return (
       <div>
-        <div>Greeting: {this.props.greeting}</div>
+        <div>Hello {this.props.greeting}</div>
       </div>
     );
   }
