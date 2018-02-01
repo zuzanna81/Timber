@@ -4,7 +4,7 @@ Feature: Navbar
   I would like to see a navbar with a home button
 
   Scenario: Display navbar and allow visitor to navigate back home
-    Given I visit index page
+    Given I visit the index page
     Then the "navbar" should be visible
-    When I click on "Home" link
-    Then I should be redirected to the landing page
+    When I click "Home"
+    Then I should be redirected to the "landing" page
