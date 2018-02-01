@@ -17,11 +17,6 @@
 /yarn-error.log
 
 .byebug_history
-coverage
-
-/coverage.data
-/coverage/
-.coverage
 .resultset.json
 .last_run.json
 .resultset.json.lock
