@@ -49,8 +49,13 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+<<<<<<< HEAD
     archive-zip (0.7.0)
       io-like (~> 0.3.0)
+=======
+    ancestry (3.0.1)
+      activerecord (>= 3.2.0)
+>>>>>>> 0d68113d1a805b764979bace527c57f764f9846a
     arel (8.0.0)
     autoprefixer-rails (7.2.5)
       execjs
@@ -309,8 +314,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+<<<<<<< HEAD
   bootstrap (~> 4.0)
   chromedriver-helper
+=======
+  ancestry
+>>>>>>> 0d68113d1a805b764979bace527c57f764f9846a
   coveralls
   cucumber-rails
   database_cleaner
