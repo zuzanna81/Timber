@@ -18,9 +18,12 @@ Then("I should be redirected to the {string} page") do |page_name|
   expect(page.current_path).to eq page_path_from(page_name)
 end
 
-# Then("I should see attached file {string}") do |string|
-#   pending # Write code here that turns the phrase above into concrete actions
-# end
+Then("I should see attached file {string}") do |content|
+  photo = Photo.find_by(title: "Something")
+  # within "#photo_#{photo.id}" do
+  #   expect(page).to have_content content
+  # end
+end
 
 def page_path_from(page_name)
   case page_name.downcase
