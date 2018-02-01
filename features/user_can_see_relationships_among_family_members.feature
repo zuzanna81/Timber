@@ -15,7 +15,6 @@ Feature: A user can see relationships among family members
     When I fill in "Email" with "lisa@gmail.com"
     And I fill in "Password" with "heythere123"
     And I click "Log in"
-    Then show me the page
     When I click 'Family tree'
     When I click 'Add family members'
     Then I should be redirected to the "Add family members" page
