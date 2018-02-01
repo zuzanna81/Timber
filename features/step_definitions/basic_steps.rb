@@ -10,8 +10,8 @@ Then("I should see {string}") do |content|
   expect(page).to have_content content
 end
 
-Then("I click {string}") do |link|
-  click_link_or_button link
+Then("I click {string}") do |element|
+  click_link_or_button element
 end
 
 Then("I should be redirected to the {string} page") do |page_name|
