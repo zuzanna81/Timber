@@ -12,9 +12,11 @@ Feature: A user can see relationships among family members
     And I click "Log in"
 
   Scenario: User can create family tree
-    Given I am logged in as "lisa@gmail.com"
-    When I click 'Family Tree'
+    When I fill in "Email" with "lisa@gmail.com"
+    And I fill in "Password" with "heythere123"
+    And I click "Log in"
     Then show me the page
+    When I click 'Family tree'
     When I click 'Add family members'
     Then I should be redirected to the "Add family members" page
     And I should see 'First name'
