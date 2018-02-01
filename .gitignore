@@ -33,5 +33,3 @@ yarn-debug.log*
 .idea
 .idea/
 .idea/*
-
-Gemfile.lock
