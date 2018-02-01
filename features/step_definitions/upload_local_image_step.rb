@@ -1,4 +1,4 @@
-When("I visit photo page") do
+When("I visit new photo page") do
   visit new_photo_path
 end
 
