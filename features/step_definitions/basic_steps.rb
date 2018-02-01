@@ -27,7 +27,7 @@ def page_path_from(page_name)
     when 'sign up'
       new_user_registration_path
     when 'family tree'
-      familytree_path
+      family_tree_path
     else
       root_path
   end
