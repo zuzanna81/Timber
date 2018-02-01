@@ -21,7 +21,7 @@ Feature: User has access to login and logout
     When I fill in "Email" with "lisa@gmail.com"
     And I fill in "Password" with "heythere123"
     And I click "Log in" button
-    Then I should be redirected to the index page
+    Then I should be redirected to the "index" page
     And I should see "Logged in as: lisa@gmail.com"
     And I should see "Log out"
     And I should see "Signed in successfully."
