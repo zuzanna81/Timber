@@ -3,10 +3,20 @@ Feature: A user can see relationships among family members
   In order to for me to see relationships with my family members,
   I would like them to be displayed on the family tree page
 
+  Background:
+    Given the following user exists
+       | email                | password       | password_confirmation     |
+       | lisa@gmail.com       | heythere123    | heythere123               |
+
+    When I visit the index page
+    And I click "Log in"
+
   Scenario: User can create family tree
-    Given I visit the family tree page
+    Given I am logged in as "lisa@gmail.com"
+    When I click 'Family Tree'
+    Then show me the page
     When I click 'Add family members'
-    Then I should be redirected to add family members form page
+    Then I should be redirected to the "Add family members" page
     And I should see 'First name'
     And I should see 'Last name'
     And I should see 'Relationship'
