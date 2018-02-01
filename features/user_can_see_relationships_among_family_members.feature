@@ -18,6 +18,7 @@ Feature: A user can see relationships among family members
     When I click 'Family tree'
     When I click 'Add family members'
     Then I should be redirected to the "Add family members" page
+    Then show me the page
     And I should see 'First name'
     And I should see 'Last name'
     And I should see 'Relationship'
