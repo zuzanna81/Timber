@@ -22,6 +22,17 @@ When("I fill in {string} with {string}") do |field, value|
   fill_in field, with: value
 end
 
+Given("the following user exists") do |table|
+  table.hashes.each do |user|
+    FactoryBot.create(:user, user)
+  end
+end
+
+Given("I am logged in as {string}") do |user_email|
+ user = User.find_by(email: user_email)
+ login_as(user, scope: :user)
+end
+
 def page_path_from(page_name)
   case page_name.downcase
     when 'sign up'

@@ -6,13 +6,14 @@ Feature: User has access to login and logout
   Background:
     Given the following user exists
        | email                | password      | password_confirmation    |
-       | lisa@gmail.com       | heythere12    | heythere123              |
+       | lisa@gmail.com       | heythere12    | heythere12               |
+
     When I visit the index page
     And I click "Log in"
 
   Scenario: Visitor logs out of account
     Given I am logged in as "lisa@gmail.com"
-    And I visit the "Family tree" page
+    And I visit the index page
     When I click "Log out"
     Then I should see "Signed out successfully."
 
@@ -20,7 +21,9 @@ Feature: User has access to login and logout
     When I fill in "Email" with "lisa@gmail.com"
     And I fill in "Password" with "heythere123"
     And I click "Log in"
-    Then I should be redirected to the "Family tree" page
+    And I visit the index page
+    # Then I should be redirected to the "Family tree" page
+    Then show me the page
     And I should see "Logged in as: lisa@gmail.com"
     And I should see "Signed in successfully."
 
