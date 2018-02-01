@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get '/family/', to: 'family#show', as: 'family'
+  get '/familytree/', to: 'familytree#show', as: 'familytree'
   devise_for :users, controllers: { registrations: "registrations" }
   root controller: :index, action: :index
-  resources controller: :family, only: [:show]
+  resources controller: :familytree, only: [:show]
 end
