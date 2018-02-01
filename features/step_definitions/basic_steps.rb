@@ -10,6 +10,10 @@ Then("I should see {string}") do |content|
   expect(page).to have_content content
 end
 
+Then("the {string} should be visible") do |selector|
+  expect(page).to have_selector :css, "##{selector}"
+end
+
 Then("I click {string}") do |element|
   click_link_or_button element
 end
@@ -18,8 +22,8 @@ Then("I should be redirected to the {string} page") do |page_name|
   expect(page.current_path).to eq page_path_from(page_name)
 end
 
-Then("I should be redirected to the index page") do
-  expect(page.current_path).to eq root_path
+When("I click {string} button") do |button|
+  click_button button
 end
 
 When("I fill in {string} with {string}") do |field, value|

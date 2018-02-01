@@ -20,22 +20,22 @@ Feature: User has access to login and logout
   Scenario: Visitor fills in all fields [Happy Path]
     When I fill in "Email" with "lisa@gmail.com"
     And I fill in "Password" with "heythere123"
-    And I click "Log in"
-    Then I should be redirected to the index page
+    And I click "Log in" button
+    Then I should be redirected to the "index" page
     And I should see "Logged in as: lisa@gmail.com"
     And I should see "Log out"
     And I should see "Signed in successfully."
 
   Scenario: Visitor does not fill in Email [Sad Path]
     When I fill in "Password" with "heythere123"
-    And I click "Log in"
+    And I click "Log in" button
     Then I should see "Invalid Email or password."
 
   Scenario: Visitor does not fill in Password [Sad Path]
     When I fill in "Email" with "lisa@gmail.com"
-    And I click "Log in"
+    And I click "Log in" button
     Then I should see "Invalid Email or password."
 
   Scenario: Visitor does not fill in both fields [Sad Path]
-    When I click "Log in"
+    When I click "Log in" button
     Then I should see "Invalid Email or password."
