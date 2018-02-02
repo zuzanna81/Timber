@@ -19,6 +19,10 @@ end
 
 Capybara.javascript_driver = :selenium
 
+Before do
+  Aws.config[:s3] = {stub_responses: true}
+end
+
 ActionController::Base.allow_rescue = false
 
 begin

@@ -17,6 +17,7 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0'
 gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 gem 'react-rails'
+gem 'aws-sdk', '~> 2'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -30,6 +31,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'faker'
+  gem 'dotenv-rails'
 end
 
 group :development do
