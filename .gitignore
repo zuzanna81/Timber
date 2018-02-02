@@ -17,7 +17,12 @@
 /yarn-error.log
 
 .byebug_history
-coverage
+.resultset.json
+.last_run.json
+.resultset.json.lock
+
+/coverage
+
 .DS_Store
 /public/packs
 /public/packs-test
