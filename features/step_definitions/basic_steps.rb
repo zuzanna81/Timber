@@ -14,17 +14,9 @@ Then("I click {string}") do |element|
   click_link_or_button element
 end
 
-# Then("I should be redirected to the {string} page") do |page_name|
-#   expect(page.current_path).to eq page_path_from(page_name)
-# end
-
 Then("I should be redirected to the index page") do
   expect(page.current_path).to eq root_path
 end
-
-# When("I fill in {string} with {string}") do |field, value|
-#   fill_in field, with: value
-# end
 
 Given("the following user exists") do |table|
   table.hashes.each do |user|
@@ -37,12 +29,18 @@ Given("I am logged in as {string}") do |user_email|
  login_as(user, scope: :user)
 end
 
+Then("I should be redirected to the {string} page") do |page_name|
+  expect(page.current_path).to eq page_path_from(page_name)
+end
+
 def page_path_from(page_name)
   case page_name.downcase
     when 'sign up'
       new_user_registration_path
-    when 'family tree'
-      family_tree_path
+    when 'family trees'
+      family_trees_path
+    when 'photo index'
+        photos_path
     else
       root_path
   end
