@@ -1,25 +1,25 @@
-<nav class='navbar navbar-light navbar-black' id='navbar'>
-  <ul class='nav justify-content-start padding-left-nav'>
-    <li class='nav-item active'>
-      <%= link_to 'Home', root_path, class: 'nav-link' %>
-    </li>
-  </ul>
-  <ul class='nav justify-content-center'>
+  <!-- <ul class='nav justify-content-center'>
     <li class="nav-item nav-logo">Timber</li>
-  </ul>
-  <ul class='nav justify-content-end padding-right-nav'>
-    <% if current_user %>
+  </ul> -->
+  <nav class='navbar navbar-light navbar-black' id='navbar'>
+  <% if current_user %>
+    <ul class='nav justify-content-start padding-left-nav'>
+      <li class='nav-item active'>
+        <%= link_to 'Family Tree', family_tree_path unless current_page? family_tree_path %>
+      </li>
+    </ul>
       <li class='nav-item'>
         <span>Logged in as: <strong><%= current_user.email %></strong></span>
       </li>
       <li class='nav-item'>
         <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
       </li>
-    <% else %>
+  <% else %>
+    <ul class='nav justify-content-end padding-right-nav'>
       <li class='nav-item'>
-        <%= link_to 'Sign up', new_user_registration_path %>
-        <%= link_to 'Log in', new_user_session_path %>
+        <%= link_to 'Sign up', new_user_registration_path unless current_page? new_user_registration_path %>
+        <%= link_to 'Log in', new_user_session_path unless current_page? new_user_session_path %>
       </li>
-    <% end %>
-  </ul>
-</nav>
+      <% end %>
+    </ul>
+  </nav>
