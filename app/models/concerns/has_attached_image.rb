@@ -13,8 +13,7 @@ module HasAttachedImage
                           s3_region: ENV['AWS_REGION'],
                           url: ':s3_domain_url',
                           s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com"
-                      },
-                      default_url: Rails.root + "spec/fixture/random.png"
+                      }
     validates_attachment :image,
                          content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
   end
