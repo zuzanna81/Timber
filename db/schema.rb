@@ -25,15 +25,6 @@ ActiveRecord::Schema.define(version: 20180131145731) do
     t.string "image"
   end
 
-  create_table "photo_albums", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "attachment_file_name"
-    t.string "attachment_content_type"
-    t.integer "attachment_file_size"
-    t.datetime "attachment_updated_at"
-  end
-
   create_table "photos", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false

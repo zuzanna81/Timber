@@ -15,7 +15,7 @@ Feature: Visitor can sign up
     And I fill in "Password" with "heythere12"
     And I fill in "Password confirmation" with "heythere12"
     And I click 'Sign up' button
-    Then I should be redirected to the "Family Tree" page
+    Then I should be redirected to the "Family Trees" page
     And I should see "Welcome! You have signed up successfully."
 
   Scenario: Visitor fills in all fields except Email [Sad Path]

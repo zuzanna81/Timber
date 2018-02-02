@@ -1,0 +1,8 @@
+<div class="media">
+  <div class="media-body">
+     <% @photos.each do |photo| %>
+       <%= image_tag photo.image.url %>
+       <%= photo.title %>
+     <% end %>
+  </div>
+</div>

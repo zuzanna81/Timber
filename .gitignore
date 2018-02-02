@@ -33,3 +33,5 @@ yarn-debug.log*
 .idea
 .idea/
 .idea/*
+
+public/system/
