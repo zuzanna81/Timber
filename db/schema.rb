@@ -60,14 +60,14 @@ ActiveRecord::Schema.define(version: 20180203150904) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "family_id"
-    t.bigint "family_albums_id"
+    t.bigint "family_album_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["family_albums_id"], name: "index_users_on_family_albums_id"
+    t.index ["family_album_id"], name: "index_users_on_family_album_id"
     t.index ["family_id"], name: "index_users_on_family_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "family_albums", "families"
   add_foreign_key "users", "families"
-  add_foreign_key "users", "family_albums", column: "family_albums_id"
+  add_foreign_key "users", "family_albums"
 end

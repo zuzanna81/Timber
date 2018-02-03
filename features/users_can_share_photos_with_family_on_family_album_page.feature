@@ -3,9 +3,19 @@ Feature: User can share photos with family
   In order to share photos with my family
   I would like to be able to display photos on family album page
 
-  Scenario: User can visit family album page and see photo
+  Background:
+    Given the following user exists
+       | email                | password       | password_confirmation     |
+       | lisa@gmail.com       | heythere123    | heythere123               |
+
     When I visit the index page
-    And I click "Family Album"
-    Then I sould be redirected to the "Family album" page
+    And I click "Log in"
+
+  Scenario: User can visit family album page and see photo
+    When I fill in "Email" with "lisa@gmail.com"
+    And I fill in "Password" with "heythere123"
+    And I click "Log in" button
+    Then I should be redirected to the "index" page
+    And I click "Family album"
+    Then I should be redirected to the "Family album" page
     And I should see "random.png"
-    
