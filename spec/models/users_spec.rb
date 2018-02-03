@@ -24,6 +24,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_confirmation_of :password }
     it { is_expected.not_to allow_value('hey').for :password }
     it { is_expected.not_to allow_value('hey@').for :email }
+    it { is_expected.to belong_to :family }
   end
 
   describe FactoryBot do
