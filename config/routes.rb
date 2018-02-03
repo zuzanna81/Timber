@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users, controllers: { registrations: "registrations" }
+  devise_for :users
   root controller: :index, action: :index
-  resources :family_trees, only: [:show, :index]
   resources :photos, only: [:index, :show, :create, :new]
 end

@@ -8,5 +8,3 @@ Feature: Navbar
     Then the "navbar" should be visible
     And I should see "Sign up"
     And I should see "Log in"
-    When I click "Family Tree"
-    Then I should be redirected to the "Family Trees" page
