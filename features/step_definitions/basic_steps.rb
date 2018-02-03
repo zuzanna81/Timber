@@ -42,7 +42,9 @@ def page_path_from(page_name)
     when 'sign up'
       new_user_registration_path
     when 'photo index'
-        photos_path
+      photos_path
+    when 'invitation'
+      new_user_invitation_path
     else
       root_path
   end
