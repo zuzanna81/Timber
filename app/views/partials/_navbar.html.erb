@@ -6,6 +6,7 @@
     <li class='nav-item active'>
       <% if current_user %>
         <%= link_to 'Photo albums', photos_path unless current_page? photos_path %>
+        <%= link_to 'Invite', new_user_invitation_path %></>
       <% end %>
     </li>
   </ul>
