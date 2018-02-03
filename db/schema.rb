@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180203123712) do
+ActiveRecord::Schema.define(version: 20180203150904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,20 @@ ActiveRecord::Schema.define(version: 20180203123712) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "family_albums", force: :cascade do |t|
+    t.bigint "family_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["family_id"], name: "index_family_albums_on_family_id"
+  end
+
+  create_table "family_albums_users", id: false, force: :cascade do |t|
+    t.bigint "family_album_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["family_album_id", "user_id"], name: "index_family_albums_users_on_family_album_id_and_user_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -46,10 +60,14 @@ ActiveRecord::Schema.define(version: 20180203123712) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "family_id"
+    t.bigint "family_albums_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["family_albums_id"], name: "index_users_on_family_albums_id"
     t.index ["family_id"], name: "index_users_on_family_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "family_albums", "families"
   add_foreign_key "users", "families"
+  add_foreign_key "users", "family_albums", column: "family_albums_id"
 end
