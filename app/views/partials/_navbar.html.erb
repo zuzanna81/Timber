@@ -2,7 +2,6 @@
   <ul class='nav justify-content-start padding-left-nav'>
     <li class='nav-item active'>
       <%= link_to 'Home', root_path unless current_page? root_path %>
-      <%= link_to 'Family Tree', family_trees_path unless current_page? family_trees_path %>
     </li>
   </ul>
   <ul class='nav justify-content-center'>
@@ -15,6 +14,7 @@
       </li>
       <li class='nav-item'>
         <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+        <%= link_to 'Photo albums', photos_path unless current_page? photos_path %>
       </li>
     <% else %>
       <li class='nav-item'>
