@@ -1,0 +1,2 @@
+class FamilyAlbum < ApplicationRecord
+end
