@@ -1,6 +1,7 @@
 class FamilyAlbumsController < ApplicationController
 
   def index
+    @photos = Photo.all
   end
 
   def show

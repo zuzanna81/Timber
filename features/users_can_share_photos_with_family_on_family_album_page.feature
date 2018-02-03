@@ -8,6 +8,10 @@ Feature: User can share photos with family
        | email                | password       | password_confirmation     |
        | lisa@gmail.com       | heythere123    | heythere123               |
 
+     Given the following image exists
+        | title               | image_file_name       |
+        | Something           | random.png            |
+
     When I visit the index page
     And I click "Log in"
 
@@ -15,7 +19,7 @@ Feature: User can share photos with family
     When I fill in "Email" with "lisa@gmail.com"
     And I fill in "Password" with "heythere123"
     And I click "Log in" button
-    Then I should be redirected to the "index" page
     And I click "Family album"
     Then I should be redirected to the "Family album" page
-    And I should see "random.png"
+    And I should see "random.png" image
+    And I should see "Something"

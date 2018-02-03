@@ -28,6 +28,12 @@ Given("the following user exists") do |table|
   end
 end
 
+Given("the following image exists") do |table|
+  table.hashes.each do |image|
+    FactoryBot.create(:photo, image)
+  end
+end
+
 Given("I am logged in as {string}") do |user_email|
  user = User.find_by(email: user_email)
  login_as(user, scope: :user)
