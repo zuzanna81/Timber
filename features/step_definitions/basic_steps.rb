@@ -43,6 +43,8 @@ def page_path_from(page_name)
       new_user_registration_path
     when 'photo index'
         photos_path
+    when 'family album'
+      family_albums_path
     else
       root_path
   end
