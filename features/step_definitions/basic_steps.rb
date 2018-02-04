@@ -2,6 +2,10 @@ When("I visit the index page") do
   visit root_path
 end
 
+When("I visit the album page") do
+  visit new_album_path
+end
+
 Then("show me the page") do
   save_and_open_page
 end
@@ -50,6 +54,8 @@ def page_path_from(page_name)
     when 'photo index'
       photos_path
     when 'album'
+      albums_path
+    when 'new album'
       albums_path
     else
       root_path

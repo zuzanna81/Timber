@@ -2,6 +2,7 @@ class PhotosController < ApplicationController
 
   def index
     @photos = Photo.order(created_at: :desc)
+    @album = Album.find_by(params[:id])
   end
 
   def new
