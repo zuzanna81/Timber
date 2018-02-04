@@ -35,8 +35,8 @@ Given("the following image exists") do |table|
 end
 
 Given("I am logged in as {string}") do |user_email|
- user = User.find_by(email: user_email)
- login_as(user, scope: :user)
+  user = User.find_by(email: user_email)
+  login_as(user, scope: :user)
 end
 
 Then("I should be redirected to the {string} page") do |page_name|
@@ -48,7 +48,7 @@ def page_path_from(page_name)
     when 'sign up'
       new_user_registration_path
     when 'photo index'
-        photos_path
+      photos_path
     when 'family album'
       family_albums_path
     else

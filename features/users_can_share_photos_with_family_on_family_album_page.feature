@@ -5,20 +5,17 @@ Feature: User can share photos with family
 
   Background:
     Given the following user exists
-       | email                | password       | password_confirmation     |
-       | lisa@gmail.com       | heythere123    | heythere123               |
+      | email          | password    | password_confirmation |
+      | lisa@gmail.com | heythere123 | heythere123           |
 
-     Given the following image exists
-        | title               | image_file_name       |
-        | Something           | random.png            |
+    Given the following image exists
+      | title     | image_file_name |
+      | Something | random.png      |
 
+    And I am logged in as "lisa@gmail.com"
     When I visit the index page
-    And I click "Log in"
 
   Scenario: User can visit family album page and see photo
-    When I fill in "Email" with "lisa@gmail.com"
-    And I fill in "Password" with "heythere123"
-    And I click "Log in" button
     And I click "Family album"
     Then I should be redirected to the "Family album" page
     And I should see "random.png" image
