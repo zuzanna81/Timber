@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe FamilyAlbum, type: :model do
+RSpec.describe Album, type: :model do
   describe 'DB Table' do
     it { is_expected.to have_db_column :id }
 end
