@@ -1,5 +1,6 @@
 FactoryBot.define do
-  factory :family_album do
+  factory :album do
+    family
     
   end
 end
