@@ -15,7 +15,7 @@
       <li class='nav-item'>
         <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
         <%= link_to 'Photo albums', photos_path unless current_page? photos_path %>
-        <%= link_to 'Family album', family_albums_path unless current_page? family_albums_path %>
+        <%= link_to 'Album', albums_path unless current_page? albums_path %>
       </li>
     <% else %>
       <li class='nav-item'>

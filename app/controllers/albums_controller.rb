@@ -1,4 +1,4 @@
-class FamilyAlbumsController < ApplicationController
+class AlbumsController < ApplicationController
 
   def index
     @photos = Photo.all

@@ -16,7 +16,7 @@ Feature: User can share photos with family
     When I visit the index page
 
   Scenario: User can visit family album page and see photo
-    And I click "Family album"
-    Then I should be redirected to the "Family album" page
+    And I click "Album"
+    Then I should be redirected to the "Album" page
     And I should see "random.png" image
     And I should see "Something"
