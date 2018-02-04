@@ -1,0 +1,12 @@
+<div class="page-header"><h1>Family album</h1></div>
+
+<div class="row justify-content-center">
+  <div class="col-md-12">
+    <div class="row">
+      <% @photos.each do |photo| %>
+        <%= image_tag photo.image.url, data: { toggle: 'lightbox', gallery: 'example-gallery', title: 'title' }, class: 'col-md-4', class: 'img-fluid', alt: 'title' %>
+        <%= photo.title %>
+      <% end %>
+    </div>
+  </div>
+</div>
