@@ -24,13 +24,19 @@ end
 
 Given("the following user exists") do |table|
   table.hashes.each do |user|
-    FactoryBot.create(:user, user)
+    create(:user, user)
+  end
+end
+
+Given("the following image exists") do |table|
+  table.hashes.each do |image|
+    create(:photo, image)
   end
 end
 
 Given("I am logged in as {string}") do |user_email|
- user = User.find_by(email: user_email)
- login_as(user, scope: :user)
+  user = User.find_by(email: user_email)
+  login_as(user, scope: :user)
 end
 
 Then("I should be redirected to the {string} page") do |page_name|
@@ -43,6 +49,8 @@ def page_path_from(page_name)
       new_user_registration_path
     when 'photo index'
       photos_path
+    when 'album'
+      albums_path
     when 'invitation'
       new_user_invitation_path
     else
