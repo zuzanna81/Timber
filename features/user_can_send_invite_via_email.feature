@@ -25,6 +25,7 @@ Feature: Visitor can send invite to another user via email
     When "name@example.com" opens the email
     And they should see "Invitation instructions" in the email subject
     And they should see "Hello name@example.com" in the email body
+    And they should see "You have been invited to The Simpsons family" in the email body
     And they should see "Accept invitation" in the email body
     When they follow "Accept invitation" in the email
     Then they should be redirected to the "Accept invitation" page
