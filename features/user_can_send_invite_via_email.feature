@@ -4,9 +4,15 @@ Feature: Visitor can send invite to another user via email
   I would like to be able to invite other users via email
 
   Background:
-    Given the following user exists
-       | email                | password       | password_confirmation     |
-       | lisa@gmail.com       | heythere123    | heythere123               |
+
+
+    Given the following families exist
+      | name         |
+      | The Simpsons |
+
+    Given the following user are part of a family
+      | email          | password    | password_confirmation | family       |
+      | lisa@gmail.com | heythere123 | heythere123           | The Simpsons |
 
     Given I am logged in as "lisa@gmail.com"
     And I visit the invitation page
@@ -22,3 +28,7 @@ Feature: Visitor can send invite to another user via email
     And they should see "Accept invitation" in the email body
     When they follow "Accept invitation" in the email
     Then they should be redirected to the "Accept invitation" page
+    And I fill in "Password" with "password"
+    And I fill in "Password confirmation" with "password"
+    And I click "Set my password"
+    And the new user's family should be "The Simpsons"
