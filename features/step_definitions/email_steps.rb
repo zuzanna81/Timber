@@ -44,14 +44,6 @@ Given /^(?:a clear email queue|no emails have been sent)$/ do
   reset_mailer
 end
 
-#
-# Check how many emails have been sent/received
-#
-
-Then /^(?:I|they|"([^"]*?)") should receive (an|no|\d+) emails?$/ do |address, amount|
-  expect(unread_emails_for(address).size).to eql parse_email_count(amount)
-end
-
 Then /^(?:I|they|"([^"]*?)") should have (an|no|\d+) emails?$/ do |address, amount|
   expect(mailbox_for(address).size).to eql parse_email_count(amount)
 end

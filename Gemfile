@@ -19,7 +19,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
-gem 'react-rails'
 gem 'lightbox-bootstrap-rails', '5.1.0.1'
 gem 'coffee-rails'
 
