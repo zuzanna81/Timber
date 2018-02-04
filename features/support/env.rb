@@ -2,6 +2,7 @@ require 'coveralls'
 Coveralls.wear_merged!('rails')
 
 require 'cucumber/rails'
+require 'email_spec'
 require 'email_spec/cucumber'
 
 Chromedriver.set_version '2.33'

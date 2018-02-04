@@ -7,7 +7,6 @@ Feature: Visitor can send invite to another user via email
     Given the following user exists
        | email                | password       | password_confirmation     |
        | lisa@gmail.com       | heythere123    | heythere123               |
-       | name@example.com     | password       | password                  |
 
     Given I am logged in as "lisa@gmail.com"
     And I visit the invitation page
@@ -15,6 +14,13 @@ Feature: Visitor can send invite to another user via email
   Scenario: Visitor sends invite to a user
     When I fill in "Email" with "name@example.com"
     And I click "Send an invitation" button
-    Then "name@example.com" should see "Invitation instructions" in the subject
-
+    Then "name@example.com" should receive an email
+    When "name@example.com" opens the email
+    And they should see "Invitation instructions" in the email subject
+    And they should see "Hello name@example.com" in the email body
+    And they should see "Accept invitation" in the email body
+    When they follow "Accept invitation" in the email
     # Then show me the page
+    # Then they should be redirected to the "Accept invitation" page
+
+# http://localhost:3000/users/invitation/accept?invitation_token=MWRdYqLszVxQZqZH67Rx
