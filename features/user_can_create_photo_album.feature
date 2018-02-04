@@ -8,16 +8,12 @@ Feature: A user can create a photo album
       | email          | password    | password_confirmation |
       | lisa@gmail.com | heythere123 | heythere123           |
 
-    Given the following image exists
-      | title     | image_file_name |
-      | Something | random.png      |
-
     And I am logged in as "lisa@gmail.com"
     When I visit the index page
 
   Scenario: User can create photo albumn
     When I visit the album page
-    And I fill in "Name" with "Lisa's renovation"
+    And I fill in "Title" with "Lisa's renovation"
     And I click "Create album"
     Then I should be redirected to the "New album" page
 

@@ -13,6 +13,7 @@ class AlbumsController < ApplicationController
   end
 
   def create
+    binding.pry
     @album = Album.new(album_params)
     if @album.save
       redirect_to albums_path

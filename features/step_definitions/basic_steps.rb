@@ -38,6 +38,12 @@ Given("the following image exists") do |table|
   end
 end
 
+Given("the following album exists") do |table|
+  table.hashes.each do |title|
+    create(:album, title)
+  end  
+end
+
 Given("I am logged in as {string}") do |user_email|
   user = User.find_by(email: user_email)
   login_as(user, scope: :user)
@@ -59,5 +65,18 @@ def page_path_from(page_name)
       albums_path
     else
       root_path
+  end
+end
+
+Given('the following user is part of a family') do |table|
+  table.hashes.each do |user|
+    family = Family.find_by(name: user[:family])
+    create(:user, email: user[:email], family: family)
+  end
+end
+
+And('the following family exist') do |table|
+  table.hashes.each do |family|
+    create(:family, family)
   end
 end
