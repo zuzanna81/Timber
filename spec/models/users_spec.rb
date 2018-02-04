@@ -28,22 +28,20 @@ RSpec.describe User, type: :model do
 
   describe FactoryBot do
     it 'should be valid' do
-      expect(FactoryBot.create(:user)).to be_valid
+      expect(create(:user)).to be_valid
     end
   end
 
-
   describe 'Associations' do
     describe 'has_many :album, through: :family' do
-      subject {FactoryBot.create(:user, family: family)}
-      let!(:family) {FactoryBot.create(:family)}
-      let!(:album) {FactoryBot.create(:album, family: family)}
+      subject {create(:user, family: family)}
+      let!(:family) {create(:family)}
+      let!(:album) {create(:album, family: family)}
 
 
       it 'allows access to album though family' do
         expect(subject.albums).to eq family.albums
       end
     end
-
   end
 end
