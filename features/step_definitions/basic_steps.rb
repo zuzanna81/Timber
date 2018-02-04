@@ -53,6 +53,8 @@ def page_path_from(page_name)
       albums_path
     when 'invitation'
       new_user_invitation_path
+    when 'accept invitation'
+      accept_user_invitation_path
     else
       root_path
   end
