@@ -11,7 +11,7 @@ Feature: Visitor can send invite to another user via email
     Given I am logged in as "lisa@gmail.com"
     And I visit the invitation page
 
-  Scenario: Visitor sends invite to a user
+  Scenario: User gets an invite from visitor
     When I fill in "Email" with "name@example.com"
     And I click "Send an invitation" button
     Then "name@example.com" should receive an email
@@ -20,7 +20,5 @@ Feature: Visitor can send invite to another user via email
     And they should see "Hello name@example.com" in the email body
     And they should see "Accept invitation" in the email body
     When they follow "Accept invitation" in the email
-    # Then show me the page
+    Then save and open all html emails
     # Then they should be redirected to the "Accept invitation" page
-
-# http://localhost:3000/users/invitation/accept?invitation_token=MWRdYqLszVxQZqZH67Rx

@@ -195,8 +195,12 @@ end
 # Interact with Email Contents
 #
 
-When /^(?:I|they|"([^"]*?)") follows? "([^"]*?)" in the email$/ do |address, link|
-  visit_in_email(link, address)
+# When /^(?:I|they|"([^"]*?)") follows? "([^"]*?)" in the email$/ do |address, link|
+#   visit_in_email(link, address)
+# end
+
+When(/^(?:I|they) follow "([^"]*?)" in the email$/) do |link|
+    visit(parse_email_for_link(current_email, link))
 end
 
 When /^(?:I|they) click the first link in the email$/ do
