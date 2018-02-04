@@ -16,7 +16,7 @@ Feature: User can send invite to another user via email
     Given I am logged in as "lisa@gmail.com"
     And I visit the invitation page
 
-  Scenario: User gets an invite from visitor
+  Scenario: User gets an invite from visitor [Happy Path]
     When I fill in "Email" with "name@example.com"
     And I click "Send an invitation" button
     And I click "Log out"
@@ -24,7 +24,6 @@ Feature: User can send invite to another user via email
     When "name@example.com" opens the email
     And I should see "Invitation instructions" in the email subject
     And I should see "Hello name@example.com" in the email body
-    And I should see "You have been invited to The Simpsons family" in the email body
     And I should see "Accept invitation" in the email body
     When I click "Accept invitation" in the email
     Then I should be redirected to the "Accept invitation" page
@@ -32,3 +31,18 @@ Feature: User can send invite to another user via email
     And I fill in "Password confirmation" with "password"
     And I click "Set my password"
     And the new user's family should be "The Simpsons"
+    Then I should be redirected to the "Landing" page
+    And I should see "Your password was set successfully. You are now signed in."
+
+  Scenario: User gets an invite from visitor [Happy Path]
+    When I fill in "Email" with "name@example.com"
+    And I click "Send an invitation" button
+    Then I should be redirected to the "Landing" page
+    And I should see "An invitation email has been sent"
+
+  Scenario: User gets an invite from visitor [Sad Path]
+    When I fill in "Email" with "name@example"
+    And I click "Send an invitation" button
+    # Then I should be redirected to the "invitation index" page
+    # And I should see "1 error prohibited this user from being saved:"
+    # And I should see "Email is invalid"
