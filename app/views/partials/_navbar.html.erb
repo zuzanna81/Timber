@@ -1,23 +1,19 @@
-<nav class='navbar navbar-light navbar-black' id='navbar'>
-  <ul class='nav justify-content-start padding-left-nav'>
-    <li class='nav-item active'>
-      <%= link_to 'Home', root_path unless current_page? root_path %>
-    </li>
-  </ul>
-  <ul class='nav justify-content-center'>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(223, 247, 225);" id='navbar'>
+  <%= link_to 'Home', root_path unless current_page? root_path %>
+  <ul class='nav justify-content-center' id='timber'>
     <li class="nav-item nav-logo">Timber</li>
   </ul>
   <ul class='nav justify-content-end padding-right-nav'>
     <% if current_user %>
-      <li class='nav-item'>
+      <li class='nav-item active'>
         <span>Logged in as: <strong><%= current_user.email %></strong></span>
       </li>
-      <li class='nav-item'>
+      <li class='nav-item active'>
         <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
         <%= link_to 'Photo albums', photos_path unless current_page? photos_path %>
       </li>
     <% else %>
-      <li class='nav-item'>
+      <li class='nav-item active'>
         <%= link_to 'Sign up', new_user_registration_path unless current_page? new_user_registration_path %>
         <%= link_to 'Log in', new_user_session_path unless current_page? new_user_session_path %>
       </li>
