@@ -17,4 +17,4 @@ Feature: User can edit and delete photos
   Scenario: User can delete uploaded photos
     And I should see "random.png" image
     When I click "Delete"
-    Then I should not see "random.png"
+    Then I should not see "random.png" image
