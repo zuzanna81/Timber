@@ -29,6 +29,24 @@ ActiveRecord::Schema.define(version: 20180203133814) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "family_trees", force: :cascade do |t|
+    t.string "last_name"
+    t.string "relationship"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_family_trees_on_ancestry"
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.string "first_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "last_name"
+    t.string "relationship"
+    t.date "date_of_birth"
+  end
+
   create_table "photos", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -52,6 +70,7 @@ ActiveRecord::Schema.define(version: 20180203133814) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "family_id"
     t.string "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -60,7 +79,6 @@ ActiveRecord::Schema.define(version: 20180203133814) do
     t.string "invited_by_type"
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
-    t.bigint "family_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["family_id"], name: "index_users_on_family_id"
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
