@@ -23,8 +23,3 @@ Feature: User can upload attached file
   Scenario: User attempts to upload photo without filling in Title and choosing a file [Sad path]
     When I click on "Upload" button
     And I should see "Error, no photo was created"
-
-  Scenario: User attempts to upload photo without choosing a file [Sad path]
-    And I fill in "Title" with "One summer day"
-    And I click on "Upload" button
-    # And I should see "Error, no photo was created"
