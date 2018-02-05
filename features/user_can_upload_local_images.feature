@@ -16,14 +16,12 @@ Feature: User can upload attached file
     When I visit the index page
 
   Scenario: User can upload attached file
-    When I visit the album page
+    When I click "New album"
     And I fill in "Title" with "Lisa's renovation"
     And I click "Create album"
-    Then I should be redirected to the "New album" page
-    When I visit new photo page
+    And I click "Add photo"
     And I fill in "Title" with "Something"
     And I upload file "random.png"
     And I click on "Upload" button
     Then I should be redirected to the "Photo index" page
-    And show me the page 
     And I should see "random.png" image

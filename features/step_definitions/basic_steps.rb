@@ -32,9 +32,11 @@ Given("the following user exists") do |table|
   end
 end
 
-Given("the following image exists") do |table|
+Given("the following image exist in album") do |table|
   table.hashes.each do |image|
-    create(:photo, image)
+    family = Family.find_by(name: image[:family])
+    album = create(:album, title: image[:album_title], family: family)
+    create(:photo, image.except!("album_title", "family").merge!(album: album))
   end
 end
 
@@ -63,20 +65,20 @@ def page_path_from(page_name)
       albums_path
     when 'new album'
       albums_path
+    when 'invitation'
+      new_user_invitation_path
+    when 'accept invitation'
+      accept_user_invitation_path
     else
       root_path
   end
 end
 
-Given('the following user is part of a family') do |table|
-  table.hashes.each do |user|
-    family = Family.find_by(name: user[:family])
-    create(:user, email: user[:email], family: family)
-  end
+Then("the last album should have title {string}") do |album_title|
+  album = Album.last
+  expect(album.title).to eq album_title
 end
 
-And('the following family exist') do |table|
-  table.hashes.each do |family|
-    create(:family, family)
-  end
-end
+Then("the last album should belong to {string} family") do |family_name|
+  family = Family.find_by(name: family_name)
+  expect(Family.last.name).to eq family.name end

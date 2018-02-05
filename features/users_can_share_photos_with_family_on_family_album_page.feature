@@ -4,13 +4,17 @@ Feature: User can share photos with family
   I would like to be able to display photos on family album page
 
   Background:
-    Given the following user exists
-      | email          | password    | password_confirmation |
-      | lisa@gmail.com | heythere123 | heythere123           |
+    Given the following family exist
+      | name         |
+      | The Simpsons |
 
-    Given the following image exists
-      | title     | image_file_name |
-      | Something | random.png      |
+    Given the following user is part of a family
+      | email          | password    | password_confirmation | family       |
+      | lisa@gmail.com | heythere123 | heythere123           | The Simpsons |
+
+    Given the following image exist in album
+      | title     | image_file_name | album_title       |  family     |
+      | Something | random.png      | Lisas renovation  | The Simpsons|
 
     And I am logged in as "lisa@gmail.com"
     When I visit the index page
@@ -18,5 +22,6 @@ Feature: User can share photos with family
   Scenario: User can visit family album page and see photo
     And I click "Album"
     Then I should be redirected to the "Album" page
+    Then show me the page 
     And I should see "random.png" image
     And I should see "Something"

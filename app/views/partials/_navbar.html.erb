@@ -3,19 +3,29 @@
     <li class='nav-item active'>
       <%= link_to 'Home', root_path unless current_page? root_path %>
     </li>
+    <% if current_user %>
+      <li class='nav-item'>
+        <%= link_to 'Photo albums', photos_path unless current_page? photos_path %>
+        <%= link_to 'Album', albums_path unless current_page? albums_path %>
+        <%= link_to 'Invite', new_user_invitation_path unless current_page? new_user_invitation_path %>
+      </li>
+    <% end %>
   </ul>
   <ul class='nav justify-content-center'>
     <li class="nav-item nav-logo">Timber</li>
   </ul>
   <ul class='nav justify-content-end padding-right-nav'>
     <% if current_user %>
+      <% if current_user.family %> 
+        <li class='nav-item'>
+          <%= link_to 'New album', new_album_path %>
+        </li>
+      <% end %>  
       <li class='nav-item'>
         <span>Logged in as: <strong><%= current_user.email %></strong></span>
       </li>
       <li class='nav-item'>
         <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-        <%= link_to 'Photo albums', photos_path unless current_page? photos_path %>
-        <%= link_to 'Album', albums_path unless current_page? albums_path %>
       </li>
     <% else %>
       <li class='nav-item'>
