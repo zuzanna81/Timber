@@ -18,3 +18,10 @@ Feature: User can edit and delete photos
     And I should see "random.png" image
     When I click "Delete"
     Then I should not see "random.png" image
+
+  Scenario: User can edit uploaded photos title
+    And I should see "random.png" image
+    And I should see "Something"
+    When I click "Edit title"
+    Then show me the page
+    Then I should see "New title"
