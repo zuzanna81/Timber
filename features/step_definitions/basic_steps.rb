@@ -55,8 +55,6 @@ def page_path_from(page_name)
       new_user_invitation_path
     when 'accept invitation'
       accept_user_invitation_path
-    when 'edit photo'
-      edit_photo_path(@photo)
     else
       root_path
   end
