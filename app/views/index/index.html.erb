@@ -1,3 +1,20 @@
-<h1>Timber</h1>
-<p>Social family platform</p>
-<p>Photo sharing</p>
+<div class="page-header"><h1>Timber</h1></div>
+
+<div class="jumbotron" style="text-align: left">
+  <h4 class="display-5">Social family platform</h4>
+  <p class="lead"><p>Lorem ipsum dolor amet narwhal viral chicharrones crucifix, shabby chic <br>
+    mustache fam. Pok pok bushwick blue bottle live-edge YOLO.</p>
+    <%= button_to 'Sign up', new_user_registration_path unless current_page? new_user_registration_path, {class: 'btn btn-info'} %>
+    <%= button_to 'Log in', new_user_session_path unless current_page? new_user_session_path, {class: 'btn btn-outline-info'} %>
+</div>
+
+  <div class="row" style="text-align: right; padding-right: 3em;">
+    <div class="col-4">
+    </div>
+    <div class="col-8">
+      <h4>Photo sharing</h4>
+      <p>8-bit green juice sustainable schlitz mumblecore, waistcoat fingerstache roof party
+         vexillologist ethical hell of dreamcatcher meggings iceland.</p>
+    </div>
+  </div>
+</div>
