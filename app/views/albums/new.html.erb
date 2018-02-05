@@ -1,0 +1,9 @@
+<%= form_for @album do |f| %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+<%= f.submit 'Create album', class: 'btn btn-primary' %>
+<% end %>

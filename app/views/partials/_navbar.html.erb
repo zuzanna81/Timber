@@ -16,6 +16,11 @@
   </ul>
   <ul class='nav justify-content-end padding-right-nav'>
     <% if current_user %>
+      <% if current_user.family %> 
+        <li class='nav-item'>
+          <%= link_to 'New album', new_album_path %>
+        </li>
+      <% end %>  
       <li class='nav-item'>
         <span>Logged in as: <strong><%= current_user.email %></strong></span>
       </li>
