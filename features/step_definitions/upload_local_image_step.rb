@@ -17,3 +17,12 @@ end
 And("I should see {string} image") do |file_name|
   expect(page).to have_css("img[src*='#{file_name}']")
 end
+
+
+Given("I visit the {string} page") do |string|
+ visit photos_path
+end
+
+Then("I should not see {string}") do |string|
+  pending # Write code here that turns the phrase above into concrete actions
+end
