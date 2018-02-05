@@ -29,24 +29,6 @@ ActiveRecord::Schema.define(version: 20180204153356) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "family_trees", force: :cascade do |t|
-    t.string "last_name"
-    t.string "relationship"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "ancestry"
-    t.index ["ancestry"], name: "index_family_trees_on_ancestry"
-  end
-
-  create_table "members", force: :cascade do |t|
-    t.string "first_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "last_name"
-    t.string "relationship"
-    t.date "date_of_birth"
-  end
-
   create_table "photos", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
