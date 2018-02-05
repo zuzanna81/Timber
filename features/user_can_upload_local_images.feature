@@ -7,6 +7,6 @@ Feature: User can upload attached file
     When I visit new photo page
     And I fill in "Title" with "Something"
     And I upload file "random.png"
-    And I click on "Upload" button
+    And I click "Upload" button
     Then I should be redirected to the "Photo index" page
     And I should see "random.png" image
