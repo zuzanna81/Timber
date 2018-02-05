@@ -9,7 +9,7 @@ Feature: User can upload attached file
   Scenario: User can upload attached file [Happy path]
     When I fill in "Title" with "Something"
     And I upload file "random.png"
-    And I click on "Upload" button
+    And I click "Upload" button
     Then I should be redirected to the "Photo index" page
     And I should see "Successfully created a new photo!"
     And I should see "random.png" image
