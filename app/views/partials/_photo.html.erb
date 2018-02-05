@@ -3,8 +3,8 @@
      <% @photos.each do |photo| %>
        <%= image_tag photo.image.url %>
        <%= photo.title %>
-       <%= link_to 'Delete', photo_path(photo), class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
-       <%= link_to 'Edit title', photo_path(photo), class: 'btn btn-danger', method: :edit, data: {confirm: 'Are you sure?'} %>
+       <%= link_to 'Delete', photo_path(photo), method: :delete, data: {confirm: 'Are you sure?'} %>
+       <%= link_to 'Edit title', photo_path(photo), method: :edit, data: {confirm: 'Are you sure?'} %>
      <% end %>
   </div>
 </div>

@@ -23,7 +23,11 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @photo.destroy
     flash[:success] = "The photo was deleted."
-    redirect_to root_path
+    redirect_to photos_path
+  end
+
+  def edit
+    @photo = Photo.find(params[:id])
   end
 
   private

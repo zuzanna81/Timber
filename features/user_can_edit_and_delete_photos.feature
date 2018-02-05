@@ -23,5 +23,5 @@ Feature: User can edit and delete photos
     And I should see "random.png" image
     And I should see "Something"
     When I click "Edit title"
-    Then show me the page
-    Then I should see "New title"
+    Then I should be redirected to the "Edit photo" page
+    # Then I should see "New title"
