@@ -22,6 +22,5 @@ Feature: User can share photos with family
   Scenario: User can visit family album page and see photo
     And I click "Album"
     Then I should be redirected to the "Album" page
-    Then show me the page 
     And I should see "random.png" image
     And I should see "Something"
