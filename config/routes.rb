@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  devise_for :users, controllers: {
+      invitations: 'invitations'
+  }
+  root controller: :index, action: :index
+  resources :photos, only: [:index, :show, :create, :new]
+  resources :albums, only: [:index, :show]
 end
