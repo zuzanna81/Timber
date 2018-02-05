@@ -10,7 +10,7 @@ Feature: User can upload attached file
 
    Given the following user is part of a family
      | email          | password    | password_confirmation | family       |
-     | lisa@gmail.com | heythere123 | heythere123           | The Simpsons |   
+     | lisa@gmail.com | heythere123 | heythere123           | The Simpsons |
 
     And I am logged in as "lisa@gmail.com"
     When I visit the index page
@@ -22,16 +22,16 @@ Feature: User can upload attached file
   Scenario: User can upload attached file [Happy path]
     When I fill in "Title" with "Something"
     And I upload file "random.png"
-    And I click on "Upload" button
+    And I click "Upload"
     And I should see "Successfully created a new photo!"
     And I should see "random.png" image
 
   Scenario: User attempts to upload photo without filling in title [Sad path]
     When I upload file "random.png"
-    And I click on "Upload" button
+    And I click "Upload"
     And I should see "Error, no photo was created"
     And I should see "Title can't be blank"
 
   Scenario: User attempts to upload photo without filling in Title and choosing a file [Sad path]
-    When I click on "Upload" button
+    When I click "Upload"
     And I should see "Error, no photo was created"

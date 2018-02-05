@@ -4,6 +4,6 @@ Rails.application.routes.draw do
       invitations: 'invitations'
   }
   root controller: :index, action: :index
-  resources :photos, only: [:index, :show, :create, :new]
+  resources :photos, only: [:index, :show, :create, :new, :destroy, :edit, :update]
   resources :albums, only: [:index, :show, :new, :create]
 end
