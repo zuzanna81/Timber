@@ -22,8 +22,8 @@ Feature: User can edit and delete photos
   Scenario: User can edit uploaded photos title
     And I should see "random.png" image
     And I should see "Something"
-    And I click "Launch demo modal"
-    And I should see "Modal title"
-    # When I click "Edit title"
-    # Then I should be redirected to the "Edit photo" page
-    # Then I should see "New title"
+    When I click "Edit title"
+    Then I should be redirected to the "Edit photo" page
+    And I should see "Something"
+    And I should see "Update photo" 
+    And I should see "Back"
