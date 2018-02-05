@@ -14,7 +14,6 @@ And("I should see {string} image") do |file_name|
   expect(page).to have_css("img[src*='#{file_name}']")
 end
 
-
 Given("I visit the {string} page") do |string|
  visit photos_path
 end
