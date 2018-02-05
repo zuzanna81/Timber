@@ -4,22 +4,34 @@ Feature: User can upload attached file
   I would like to be able to attach a local file and upload it
 
   Background:
-    Given I visit new photo page
+    Given the following family exist
+     | name         |
+     | The Simpsons |
+
+   Given the following user is part of a family
+     | email          | password    | password_confirmation | family       |
+     | lisa@gmail.com | heythere123 | heythere123           | The Simpsons |
+
+    And I am logged in as "lisa@gmail.com"
+    When I visit the index page
+    When I click "New album"
+    And I fill in "Title" with "Lisa's renovation"
+    And I click "Create album"
+    And I click "Add photo"
 
   Scenario: User can upload attached file [Happy path]
     When I fill in "Title" with "Something"
     And I upload file "random.png"
-    And I click "Upload" button
-    Then I should be redirected to the "Photo index" page
+    And I click "Upload"
     And I should see "Successfully created a new photo!"
     And I should see "random.png" image
 
   Scenario: User attempts to upload photo without filling in title [Sad path]
     When I upload file "random.png"
-    And I click on "Upload" button
+    And I click "Upload"
     And I should see "Error, no photo was created"
     And I should see "Title can't be blank"
 
   Scenario: User attempts to upload photo without filling in Title and choosing a file [Sad path]
-    When I click on "Upload" button
+    When I click "Upload"
     And I should see "Error, no photo was created"

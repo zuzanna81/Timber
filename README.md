@@ -3,23 +3,43 @@
 Final project for Craft Academy October 2017 Cohort.
 
 ## Description
-_[TODO: Add description]_
+
+Timber is a platform to share your phots and content together with your family
+
 ## Contributors
-Francesco Falchi: https://github.com/NegativeKarma
-Lisa Eriksson: https://github.com/lcegit
-Sophie Sjöberg: https://github.com/sophiesjoberg
-Zuzanna Bienkowska: https://github.com/zuzanna81/
+* Francesco Falchi: https://github.com/NegativeKarma
+* Lisa Eriksson: https://github.com/lcegit
+* Sophie Sjöberg: https://github.com/sophiesjoberg
+* Zuzanna Bienkowska: https://github.com/zuzanna81/
 During the project we had help from:
-https://github.com/magnus-thor/  https://github.com/tochman
-https://github.com/faraznaeem  https://github.com/diraulo
-_[TODO: Add contributor list]_
+* https://github.com/magnus-thor/
+* https://github.com/tochman
+* https://github.com/faraznaeem
+
 ## Technologies
-Ruby on Rails
-Bootstrap
-[_TODO: Add list of technologies used in project ]_
+* Ruby on Rails
+* Bootstrap
+* Sass
+* AWS
+* Webpacker
+* Paperclip
+* Imagemagick
+* Devise
+* devise_invitable
+* Coffee rails
+
 ## Installation
 _[TODO: Add installation and setup instructions]_
 ## Testing
+* Cucumber
+* RSpec
+* Pry
+* Factory Bot
+* Faker
+* Launchy
+* Selenium
+* Shoulda Matchers
+* email_spec
 
 ### Acceptance test
 Acceptance test are written in Cucumber using Capybara and Selenium with Chrome Driver in headless state.
@@ -33,6 +53,12 @@ $ cucumber
 ```
 
 ### Unit tests
+Unit test are written in rspec
+
+```bash
+$ rspec
+```
+
 #### React Components
 This project makes use of React components to offer a rich user experience.
 
