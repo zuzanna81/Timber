@@ -3,6 +3,9 @@
      <% @photos.each do |photo| %>
        <%= image_tag photo.image.url %>
        <%= photo.title %>
+       <%= link_to 'Delete', photo_path(photo), class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
      <% end %>
   </div>
 </div>
+
+<%#= link_to 'Remove', photo_path(photo), class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %>

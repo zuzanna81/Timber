@@ -4,9 +4,17 @@ Feature: User can edit and delete photos
   I would like to be able to delete and edit photos after I upload them
 
   Background:
+    Given the following user exists
+      | email          | password    | password_confirmation |
+      | lisa@gmail.com | heythere123 | heythere123           |
+
+    Given the following image exists
+      | title     | image_file_name |
+      | Something | random.png      |
+
     Given I visit the "Photo index" page
 
   Scenario: User can delete uploaded photos
     And I should see "random.png" image
-    When I click "Delete" button
+    When I click "Delete"
     Then I should not see "random.png"
