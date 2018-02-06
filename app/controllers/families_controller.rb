@@ -5,6 +5,7 @@ class FamiliesController < ApplicationController
 	end
 	
 	def create 
+		binding.pry
 		@family = Family.new(family_params)
 		@family.save 
 	end 	
