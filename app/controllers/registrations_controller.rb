@@ -3,10 +3,6 @@ class RegistrationsController < Devise::RegistrationsController
   def create
 		build_resource(sign_up_params)
 
-		# if params[:user][:family_name] = ''
-			# flash[:notice] = "There is no family name"
-
-		# set_flash_message = missing f
 		resource.save
 		yield resource if block_given?
     if resource.persisted?
@@ -22,7 +18,6 @@ class RegistrationsController < Devise::RegistrationsController
         respond_with resource, location: after_inactive_sign_up_path_for(resource)
       end
     else
-			binding.pry
       clean_up_passwords resource
       set_minimum_password_length
       respond_with resource
