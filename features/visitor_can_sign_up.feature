@@ -14,7 +14,7 @@ Feature: Visitor can sign up
     When I fill in "Email" with "lisa@gmail.com"
     And I fill in "Password" with "heythere12"
     And I fill in "Password confirmation" with "heythere12"
-    Then I fill in "Family name" with "The Simpsons"
+    Then I type in "family_name" with "The Simpsons"
     And I click "Sign up" button
     Then a family should have been created in the database
     And the new user's family should be "The Simpsons"
@@ -23,21 +23,21 @@ Feature: Visitor can sign up
   Scenario: Visitor fills in all fields except Email [Sad Path]
     When I fill in "Password" with "heythere12"
     And I fill in "Password confirmation" with "heythere12"
-    Then I fill in "Family name" with "The Simpsons"
+    Then I type in "family_name" with "The Simpsons"
     And I click 'Sign up' button
     Then I should see "1 error prohibited this user from being saved: Email can't be blank"
 
   Scenario: Visitor fills in all fields except Password [Sad Path]
     When I fill in "Email" with "lisa@gmail.com"
     And I fill in "Password confirmation" with "heythere12"
-    Then I fill in "Family name" with "The Simpsons"
+    Then I type in "family_name" with "The Simpsons"
     And I click 'Sign up' button
     Then I should see "2 errors prohibited this user from being saved: Password can't be blankPassword confirmation doesn't match Password"
 
   Scenario: Visitor fills in all fields except Password confirmation [Sad Path]
     When I fill in "Email" with "lisa@gmail.com"
     And I fill in "Password" with "heythere12"
-    Then I fill in "Family name" with "The Simpsons"
+    Then I type in "family_name" with "The Simpsons"
     And I click 'Sign up' button
     Then I should see "1 error prohibited this user from being saved: Password confirmation doesn't match Password"
 
@@ -45,7 +45,7 @@ Feature: Visitor can sign up
     When I fill in "Email" with "lisa@gmail.com"
     And I fill in "Password" with "hey"
     And I fill in "Password confirmation" with "hey"
-    Then I fill in "Family name" with "The Simpsons"
+    Then I type in "family_name" with "The Simpsons"
     And I click "Sign up" button
     Then I should see "1 error prohibited this user from being saved: Password is too short"
 
@@ -54,4 +54,4 @@ Feature: Visitor can sign up
     And I fill in "Password" with "hey"
     And I fill in "Password confirmation" with "hey"
     And I click "Sign up" button
-    Then I should see "Family name can't be blank"  
+    Then I should see "Family name can't be blank"

@@ -6,3 +6,7 @@ Then("a family should have been created in the database") do
   @family = Family.last
   expect(@family).not_to be nil
 end
+
+Then("I type in {string} with {string}") do |field, value|
+  fill_in "#{field}", with: value
+end
