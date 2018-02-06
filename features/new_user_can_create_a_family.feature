@@ -6,8 +6,8 @@ Feature: User can create a family during registration process
 	Scenario: User can create a family
 		Given I visit registration page
 		When I fill in "Email" with "lisa@gmail.com"
-    And I fill in "Password" with "heythere12"
-    And I fill in "Password confirmation" with "heythere12"
+    	And I fill in "Password" with "heythere12"
+    	And I fill in "Password confirmation" with "heythere12"
 		Then I fill in "Family name" with "The Simpsons"
 		And I click "Sign up" button
 		Then a family should have been created in the database
