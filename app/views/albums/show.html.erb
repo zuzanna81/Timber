@@ -1,6 +1,6 @@
 <div class="page-header"><h1>Family album</h1></div>
 
-<%= link_to "Add photo", new_photo_path(album_id: @album.id) %> 
+<%= link_to "Add photo", new_photo_path(album_id: @album.id) %>
 
 <div class="row justify-content-center">
   <div class="col-md-12">
@@ -8,6 +8,8 @@
       <% @album.photos.each do |photo| %>
         <%= image_tag photo.image.url, data: { toggle: 'lightbox', gallery: 'example-gallery', title: 'title' }, class: 'col-md-4', class: 'img-fluid', alt: 'title' %>
         <%= photo.title %>
+        <%= link_to 'Delete', photo_path(photo), method: :delete, data: {confirm: 'Are you sure?'} %>
+        <%= link_to 'Edit title', edit_photo_path(photo) %>
       <% end %>
     </div>
   </div>
