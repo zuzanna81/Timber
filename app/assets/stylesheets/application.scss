@@ -3,6 +3,7 @@
 
 body {
   text-align: center;
+  background-color: #b7d6aa;
 }
 
 a:hover {
@@ -26,12 +27,13 @@ a {
   padding-right: 3em;
 }
 
-.row {
+.row-images {
   padding-bottom: 1em;
 }
 
 .jumbotron {
   background-color: rgba(255, 255, 255, 0);
+  padding: 3rem 3rem;
 }
 
 //Typography
@@ -47,9 +49,6 @@ a {
   text-align: center;
 }
 
-.jumbotron {
-  padding: 6rem 3rem;
-}
 
 //Navigation
 
@@ -87,7 +86,7 @@ a {
   // background-repeat: no-repeat;
   // background-attachment: fixed;
   // background-position: center;
-  background-color: #b7d6aa;
+  // background-color: #b7d6aa;
 }
 
 //Footer
