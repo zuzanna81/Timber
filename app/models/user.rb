@@ -5,7 +5,9 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  def has_family? 
-  	self.family.present? 
-  end        
+  validates_presence_of :family_name
+
+  def has_family?
+  	self.family.present?
+  end
 end

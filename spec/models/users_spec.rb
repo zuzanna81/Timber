@@ -20,6 +20,7 @@ RSpec.describe User, type: :model do
   describe 'Validations' do
     it {is_expected.to validate_presence_of :email}
     it {is_expected.to validate_presence_of :password}
+    it {is_expected.to validate_presence_of :family_name}
     it {is_expected.to validate_uniqueness_of(:email).case_insensitive}
     it {is_expected.to validate_confirmation_of :password}
     it {is_expected.not_to allow_value('hey').for :password}
@@ -44,14 +45,14 @@ RSpec.describe User, type: :model do
       end
     end
   end
-  describe 'Instance methods' do 
-    describe '#has_family?' do 
+  describe 'Instance methods' do
+    describe '#has_family?' do
       let(:family) {create(:family)}
       subject {create(:user, family: family)}
 
-      it 'response true' do 
+      it 'response true' do
         expect(subject.has_family?).to eq true
-      end  
-    end  
-  end   
+      end
+    end
+  end
 end
