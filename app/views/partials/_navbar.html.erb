@@ -1,34 +1,42 @@
-<nav class='navbar navbar-light navbar-black' id='navbar'>
-  <ul class='nav justify-content-start padding-left-nav'>
-    <li class='nav-item active'>
-      <%= link_to 'Home', root_path unless current_page? root_path %>
+
+<nav class='navbar navbar-light navbar-green navbar-expand{-sm}' id='navbar'>
+  <ul class="nav row align-items-left padding-left-nav">
+  <%= link_to 'Home', root_path unless current_page? root_path %>
+  <% if current_user %>
+    <li class='nav-item'>
+      <%= link_to 'Photo albums', photos_path unless current_page? photos_path %>
     </li>
+    <li class='nav-item'>
+      <%= link_to 'Album', albums_path unless current_page? albums_path %>
+    </li>
+    <li class='nav-item'>
+      <%= link_to 'Invite', new_user_invitation_path unless current_page? new_user_invitation_path %>
+    </li>
+  <% end %>
+  </ul>
+  <ul class="nav row align-items-center padding-left-nav">
+    <ul class="nav row align-items-start padding-left-nav">
+      <li class="nav-item nav-logo">Timber</li>
+    </ul>
+  </ul>
+
+    <!-- <ul class='nav justify-content-center' id='timber'>
+      <li class="nav-item nav-logo">Timber</li>
+    </ul> -->
+
+  <ul class='nav row align-items-end padding-right-nav'>
     <% if current_user %>
+      <% if current_user.family %>
       <li class='nav-item'>
-        <%= link_to 'Photo albums', photos_path unless current_page? photos_path %>
-        <%= link_to 'Album', albums_path unless current_page? albums_path %>
-        <%= link_to 'Invite', new_user_invitation_path unless current_page? new_user_invitation_path %>
+        <%= link_to 'New album', new_album_path %>
       </li>
-    <% end %>
-  </ul>
-  <ul class='nav justify-content-center'>
-    <li class="nav-item nav-logo">Timber</li>
-  </ul>
-  <ul class='nav justify-content-end padding-right-nav'>
-    <% if current_user %>
-      <% if current_user.family %> 
-        <li class='nav-item'>
-          <%= link_to 'New album', new_album_path %>
-        </li>
-      <% end %>  
-      <li class='nav-item'>
+      <% end %>
+      <li class='nav-item active'>
         <span>Logged in as: <strong><%= current_user.email %></strong></span>
       </li>
       <li class='nav-item'>
         <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-      </li>
     <% else %>
-      <li class='nav-item'>
         <%= link_to 'Sign up', new_user_registration_path unless current_page? new_user_registration_path %>
         <%= link_to 'Log in', new_user_session_path unless current_page? new_user_session_path %>
       </li>
