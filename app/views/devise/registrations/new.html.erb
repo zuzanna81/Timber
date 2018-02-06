@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :family_name %><br />
-    <%= f.text_field :family_name, autocomplete: "off" %>
+    <%= label :family_name, "Family name" %><br />
+    <%= text_field :family_name, {}, required: true, name: "family_name", id: "family_name" %>
   </div>
 
   <div class="actions">
