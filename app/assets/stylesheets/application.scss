@@ -3,7 +3,11 @@
 
 body {
   text-align: center;
+}
+
+.body-background {
   background-color: #b7d6aa;
+  padding-bottom: 20rem;
 }
 
 a:hover {
@@ -49,7 +53,6 @@ a {
   text-align: center;
 }
 
-
 //Navigation
 
 .nav-logo {
@@ -60,7 +63,7 @@ a {
 .nav-item {
      padding-right: 0.75em;
      padding-left: 0.75em;
-     color: #94958C;
+     color: #69695d;
 }
 
 .navbar-green {
@@ -81,12 +84,41 @@ a {
 
 //Images
 
-.bg-container {
-  // background-image: url("https://images.unsplash.com/photo-1458966480358-a0ac42de0a7a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b1c52d3399307f190e2af338b31d9c7c&auto=format&fit=crop&w=1500&q=80");
-  // background-repeat: no-repeat;
-  // background-attachment: fixed;
-  // background-position: center;
-  // background-color: #b7d6aa;
+%image-size {
+  height: 150px;
+  width: 150px;
+}
+
+#img1 {
+  @extend %image-size;
+  top: -20px;
+  right: 90px;
+  transform: rotate(-3deg);
+  position: absolute;
+}
+
+#img2 {
+  @extend %image-size;
+  top: 25px;
+  right: 50px;
+  transform: rotate(5deg);
+  position: sticky;
+}
+
+#img3 {
+  @extend %image-size;
+  top: 40px;
+  right: 30px;
+  transform: rotate(-5deg);
+    position: absolute;
+}
+
+#img4 {
+  @extend %image-size;
+  top: 45px;
+  right: 70px;
+  transform: rotate(5deg);
+  position: absolute;
 }
 
 //Footer

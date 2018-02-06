@@ -1,5 +1,6 @@
 
 <nav class='navbar navbar-light navbar-green' id='navbar'>
+  <div class="container-fluid">
     <ul class="nav row align-items-left padding-left-nav">
     <%= link_to 'Home', root_path unless current_page? root_path %>
     <% if current_user %>
@@ -32,9 +33,14 @@
         <li class='nav-item'>
           <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
       <% else %>
+        </li>
+        <li class='nav-item'>
           <%= link_to 'Sign up', new_user_registration_path unless current_page? new_user_registration_path %>
+        </li>
+        <li class='nav-item'>
           <%= link_to 'Log in', new_user_session_path unless current_page? new_user_session_path %>
         </li>
       <% end %>
     </ul>
+  </div>
 </nav>
