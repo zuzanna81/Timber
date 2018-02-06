@@ -5,6 +5,47 @@ body {
   text-align: center;
 }
 
+.row {
+  padding-bottom: 1em;
+}
+
+.jumbotron {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+//Typography
+
+.lobster {
+  font-size: 2.5rem;
+  font-family: 'Lobster';
+  padding-bottom: 1rem;
+  color: #69695d;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.jumbotron {
+  padding: 6rem 3rem;
+}
+
+//Navigation
+
+.btn-group {
+  padding: 2rem;
+}
+
+.btn-space {
+  margin-right:1rem;
+}
+
+.btn {
+  padding: .5rem 2rem;
+}
+
+//Images
+
 .bg-container {
   // background-image: url("https://images.unsplash.com/photo-1458966480358-a0ac42de0a7a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b1c52d3399307f190e2af338b31d9c7c&auto=format&fit=crop&w=1500&q=80");
   // background-repeat: no-repeat;
@@ -13,36 +54,11 @@ body {
   background-color: #b7d6aa;
 }
 
-.jumbotron {
-  background-color: rgba(255, 255, 255, 0);
-}
-
-.lobster {
-  font-size: 2.5rem;
-  font-family: 'Lobster';
-  padding-bottom: 1rem;
-}
-
-.jumbotron {
-  padding: 6rem 3rem;
-}
-
-.btn-group {
-  padding: 2rem;
-}
-
-.btn-space
-{
-  margin-right:1rem;
-}
-
-.btn {
-  padding: .5rem 2rem;
-}
+//Footer
 
 footer {
   background-color: #69695d;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 5rem;
@@ -51,8 +67,4 @@ footer {
 
 .footer-text {
   color: #FFF;
-}
-
-.center-text {
-  text-align: center;
 }
