@@ -1,13 +1,13 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def create
-		build_resource(sign_up_params)
-		resource.save
-		yield resource if block_given?
+    build_resource(sign_up_params)
+    resource.save
+    yield resource if block_given?
     if resource.persisted?
       if resource.active_for_authentication?
-				family = Family.create(name: params[:family_name])
-				resource.update_attribute(:family, family)
+        family = Family.create(name: params[:family_name])
+        resource.update_attribute(:family, family)
         set_flash_message! :notice, :signed_up
         sign_up(resource_name, resource)
         respond_with resource, location: after_sign_up_path_for(resource)
@@ -28,5 +28,5 @@ class RegistrationsController < Devise::RegistrationsController
   def sign_up_params
     params.require(:user).permit(:email, :password, :password_confirmation)
   end
-
+  
 end
