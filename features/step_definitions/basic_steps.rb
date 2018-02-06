@@ -43,7 +43,7 @@ end
 Given("the following album exists") do |table|
   table.hashes.each do |title|
     create(:album, title)
-  end  
+  end
 end
 
 Given("I am logged in as {string}") do |user_email|
