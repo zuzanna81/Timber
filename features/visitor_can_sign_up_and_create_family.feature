@@ -54,5 +54,4 @@ Feature: Visitor can sign up and create a family during registration process
     And I fill in "Password" with "heythere12"
     And I fill in "Password confirmation" with "heythere12"
     And I click "Sign up" button
-    Then show me the page
     # Then I should see "Family name can't be blank"
