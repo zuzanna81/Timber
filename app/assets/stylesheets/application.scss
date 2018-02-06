@@ -5,13 +5,13 @@ body {
   text-align: center;
 }
 
-// .bg-container {
-//   background-image: url("http://www.lisaeriksson.net/timber/family_tree_01.png");
-//   background-repeat: no-repeat;
-//   background-attachment: fixed;
-//   background-position: center;
-//   opacity: 0.5;
-// }
+.bg-container {
+  // background-image: url("https://images.unsplash.com/photo-1458966480358-a0ac42de0a7a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b1c52d3399307f190e2af338b31d9c7c&auto=format&fit=crop&w=1500&q=80");
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  // background-position: center;
+  background-color: #b7d6aa;
+}
 
 .jumbotron {
   background-color: rgba(255, 255, 255, 0);
@@ -36,4 +36,17 @@ body {
 
 .btn {
   padding: .5rem 2rem;
+}
+
+footer{
+  background-color: #69695d;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  line-height: 4rem;
+}
+
+.footer-text {
+  color: #FFF;
 }
