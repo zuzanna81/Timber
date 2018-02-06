@@ -1,13 +1,13 @@
-Feature: Visitor can sign up
+Feature: Visitor can sign up and create a family during registration process
   As a visitor
-  In order to have an account on the site
-  I would like to be able to sign up
+  In order to have an account and a family on the site
+  I would like to be able to sign up and create my family
 
   Background:
     When I visit the index page
     And I click "Sign up"
 
-  Scenario: Visitor can navigate to sign up page
+  Scenario: Visitor can navigate to sign up page and create a family
     Then I should be redirected to the "Sign up" page
 
   Scenario: Visitor fills in all fields [Happy Path]
