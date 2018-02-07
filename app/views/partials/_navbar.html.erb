@@ -23,6 +23,9 @@
         <% end %>
       </li>
       <li class='nav-item'>
+        <%= link_to 'Edit avatar', edit_user_registration_path unless current_page? edit_user_registration_path %>
+      </li>
+      <li class='nav-item'>
         <% if current_user %>
           <% if current_user.family %>
             <%= link_to 'New album', new_album_path %>
