@@ -21,7 +21,6 @@ Feature: User can add avatar to profile
 
     Scenario: User can upload an avatar photo to profile
       When I click "Edit avatar"
-      # And I click "Choose file"
       And I upload the file "random.png"
       And I click "Update"
       And I should see "Your account has been updated successfully."
