@@ -9,6 +9,8 @@ Feature: User can see relevant info when logged in
        | lisa@gmail.com       | heythere123    | heythere123               |
 
     When I visit the index page
+    Then I should see "A social family platform"
+    And I should see "Share your photos privately"
     And I click "Log in"
 
   Scenario:
@@ -16,4 +18,4 @@ Feature: User can see relevant info when logged in
     And I fill in "Password" with "heythere123"
     And I click "Log in" button
     Then I should be redirected to the "index" page
-    And I should see "Welcome"
+    And I should see "Welcome" and "lisa@gmail.com"
