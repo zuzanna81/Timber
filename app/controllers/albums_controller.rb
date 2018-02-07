@@ -1,5 +1,7 @@
 class AlbumsController < ApplicationController
-before_action :check_for_family, only: [:create]  
+
+before_action :check_for_family, only: [:create]
+
   def index
     @albums = current_user.family.albums
   end
@@ -12,7 +14,7 @@ before_action :check_for_family, only: [:create]
     @album = Album.find(params[:id])
   end
 
-  def create  
+  def create
     @album = Album.new(album_params)
     @album.family = current_user.family
     if @album.save
@@ -28,4 +30,5 @@ before_action :check_for_family, only: [:create]
   def check_for_family
     current_user.has_family?
   end
+
 end
