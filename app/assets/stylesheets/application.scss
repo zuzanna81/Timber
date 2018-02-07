@@ -5,10 +5,10 @@ body {
   text-align: center;
 }
 
-.nav-item {
-     padding-right: 0.75em;
-     padding-left: 0.75em;
-     color: #94958C;
+.body-background {
+  background-color: #b7d6aa;
+  padding-bottom: 20rem;
+  background: linear-gradient(to bottom, rgb(223, 247, 225), rgb(240, 240, 230));
 }
 
 a:hover {
@@ -20,17 +20,8 @@ a {
   font-weight: bold;
 }
 
-.nav-logo {
-  font-family: 'Lobster';
-  font-size: 2.5em;
-}
-
 .h6 {
   text-align: center;
-}
-
-.navbar-green {
-  background-color: rgb(223, 247, 225);
 }
 
 .padding-left-nav {
@@ -39,4 +30,126 @@ a {
 
 .padding-right-nav {
   padding-right: 3em;
+}
+
+.row-images {
+  padding-bottom: 1em;
+}
+
+.jumbotron {
+  background-color: rgba(255, 255, 255, 0);
+  padding: 3rem 3rem;
+}
+
+//Typography
+
+.lobster {
+  font-size: 3rem;
+  font-family: 'Lobster';
+  padding-bottom: 1rem;
+  color: #69695d;
+  text-shadow: 0px 1px 1px #FFF;
+}
+
+.center-text {
+  text-align: center;
+}
+
+//Navigation
+
+.nav-logo {
+  font-family: 'Lobster';
+  font-size: 2.5em;
+  color: #69695d;
+  text-shadow: 0px 1px 1px #FFF;
+}
+
+.nav-item {
+     padding-right: 0.75em;
+     padding-left: 0.75em;
+     color: #69695d;
+}
+
+.navbar-green {
+  background-color: rgb(223, 247, 225);
+}
+
+.btn-group {
+  padding: 2rem;
+}
+
+.btn-space {
+  margin-right:1rem;
+}
+
+.btn {
+  padding: .5rem 2rem;
+}
+
+//Images
+
+%image-size {
+  height: 150px;
+  width: 150px;
+}
+
+%box-shadow {
+  box-shadow: 0px 2px 2px #ccc;
+}
+
+#img1 {
+  @extend %image-size;
+  top: -20px;
+  right: 90px;
+  transform: rotate(-3deg);
+  position: absolute;
+  @extend %box-shadow
+}
+
+#img2 {
+  @extend %image-size;
+  top: 25px;
+  right: 50px;
+  transform: rotate(5deg);
+  position: sticky;
+  @extend %box-shadow
+}
+
+#img3 {
+  @extend %image-size;
+  top: 40px;
+  right: 30px;
+  transform: rotate(-5deg);
+  position: absolute;
+  @extend %box-shadow
+}
+
+#img4 {
+  @extend %image-size;
+  top: 45px;
+  right: 70px;
+  transform: rotate(5deg);
+  position: absolute;
+  @extend %box-shadow
+}
+
+#img5 {
+  top: 45px;
+  right: 70px;
+}
+
+//Footer
+
+footer {
+  background-color: #69695d;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 6.5rem;
+  line-height: 6rem;
+}
+
+.footer-text {
+  color: #FFF;
+  padding: 1em;
 }
