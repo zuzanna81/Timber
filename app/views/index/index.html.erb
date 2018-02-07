@@ -1,47 +1,5 @@
-
-<%= render 'partials/welcome_user' %>
-
-<div class="body-background">
-  <div class="container">
-    <div class="jumbotron" style="text-align: left">
-      <div class="row">
-        <div class="col-md-8">
-          <h4 class="lobster">A social family platform</h4>
-          <p class="lead"><p>Timber is a private network where you and your family can collaborate on shared family trees.
-          Sign up and invite family members to join your family channels!</p>
-        </div>
-      <div class="col-md-4">
-
-        <div id="img5">
-          <img src="http://www.lisaeriksson.net/timber/family_tree_mood.jpg" class="img-responsive img-thumbnail" style="box-shadow: 0px 2px 2px #ccc;" >
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="jumbotron">
-    <div class="row">
-      <div class="col-md-4">
-        <div id="img1">
-          <img src="http://www.lisaeriksson.net/timber/tree_01.jpg" class="img-responsive img-thumbnail" >
-        </div>
-        <div id="img2">
-          <img src="http://www.lisaeriksson.net/timber/family_02.jpg" class="img-responsive img-thumbnail" >
-        </div>
-        <div id="img3">
-          <img src="http://www.lisaeriksson.net/timber/family_03.jpg" class="img-responsive img-thumbnail" >
-        </div>
-        <div id="img4">
-          <img src="http://www.lisaeriksson.net/timber/father_daughter.jpg" class="img-responsive img-thumbnail" >
-        </div>
-        <!-- <img src="http://www.lisaeriksson.net/timber/father_daughter.jpg" class="img-responsive img-thumbnail" > -->
-      </div>
-        <div class="col-md-8" style="text-align: left">
-          <h4 class="lobster">Share your photos privately</h4>
-          <p>Create albums together with your family as you simultaneously back up your photos. Timber lets you share cherished memories privately
-            with your inner circle.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<% if current_user %>
+ <%= render 'partials/welcome_user' %> 
+<% else %> 
+ <%= render 'partials/index_visitor' %>	
+<% end %> 
