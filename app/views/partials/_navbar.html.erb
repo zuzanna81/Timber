@@ -13,10 +13,10 @@
         <% if current_user %>
       </li>
       <li class='nav-item'>
-        <%= link_to 'Photo albums', photos_path unless current_page? photos_path %>
+        <%= link_to 'My albums', photos_path unless current_page? photos_path %>
       </li>
       <li class='nav-item'>
-        <%= link_to 'Album', albums_path unless current_page? albums_path %>
+        <%= link_to 'Shared albums', albums_path unless current_page? albums_path %>
       </li>
       <li class='nav-item'>
         <%= link_to 'Invite', new_user_invitation_path unless current_page? new_user_invitation_path %>
