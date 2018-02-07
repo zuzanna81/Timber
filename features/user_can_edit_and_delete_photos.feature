@@ -18,7 +18,7 @@ Feature: User can edit and delete photos
 
     And I am logged in as "lisa@gmail.com"
     When I visit the index page
-    And I click "Album"
+    And I click "Shared albums"
 
   Scenario: User can delete uploaded photos
     And I click "Lisas renovation"
