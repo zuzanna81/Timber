@@ -94,6 +94,10 @@ a {
   padding: .5rem 2rem;
 }
 
+.form-control {
+  
+}
+
 //Images
 
 %image-size {
@@ -144,6 +148,19 @@ a {
 #img5 {
   top: 45px;
   right: 70px;
+}
+
+.round-image-24 {
+    background-color: #b7d6aa;
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    height: 24px;
+    width: 24px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 170% }
 }
 
 //Footer
