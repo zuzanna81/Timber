@@ -44,14 +44,14 @@ RSpec.describe User, type: :model do
       end
     end
   end
-  describe 'Instance methods' do 
-    describe '#has_family?' do 
+  describe 'Instance methods' do
+    describe '#has_family?' do
       let(:family) {create(:family)}
       subject {create(:user, family: family)}
 
-      it 'response true' do 
+      it 'response true' do
         expect(subject.has_family?).to eq true
-      end  
-    end  
-  end   
+      end
+    end
+  end
 end
