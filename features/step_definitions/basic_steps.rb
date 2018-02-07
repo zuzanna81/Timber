@@ -46,7 +46,7 @@ def page_path_from(page_name)
       new_user_registration_path
     when 'photo index'
       photos_path
-    when 'album'
+    when 'shared albums'
       albums_path
     when 'invitation'
       new_user_invitation_path
