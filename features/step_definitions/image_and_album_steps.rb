@@ -40,3 +40,7 @@ end
 Then("the last album should belong to {string} family") do |family_name|
   family = Family.find_by(name: family_name)
   expect(Family.last.name).to eq family.name end
+
+Then("I should not see {string}") do |content|
+  expect(page).not_to have_content content # Write code here that turns the phrase above into concrete actions
+end
