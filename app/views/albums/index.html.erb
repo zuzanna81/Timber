@@ -2,7 +2,7 @@
 <% @albums.each do |album| %>
 	<div class="row justify-content-center">
 	  <div class="col-md-12">
-	    <div class="row">
+	    <div class="row-images">
 				<%= link_to album.title, album_path(album) %>
 	      <% album.photos.each do |photo| %>
 	        <%= image_tag photo.image.url, data: { toggle: 'lightbox', gallery: 'example-gallery', title: 'title' }, class: 'col-md-4', class: 'img-fluid', alt: 'title' %>
