@@ -1,36 +1,55 @@
-Feature: User can only see albums connected to her/his own family when logged in
-  As a user,
+Feature: User can only see photos connected to her account
+  As a user
   In order to protect my shared photos
-  I would like to see my own family's photos
+  I would like to only see photos connected to my account
 
- Scenario:
+ Scenario: User can only see albums connected to her account
    When I visit the index page
    And I click "Sign up"
-   Then I should be redirected to the "Sign up" page
-   When I fill in "Email" with "lisa@gmail.com"
+   And I fill in "Email" with "lisa@gmail.com"
    And I fill in "Password" with "heythere12"
    And I fill in "Password confirmation" with "heythere12"
-   Then I fill in "Family name" with "The Simpsons"
+   And I fill in "Family name" with "The Simpsons"
    And I click "Sign up" button
-   Then a family should have been created in the database
-   And the new user's family should be "The Simpsons"
+   Then the new user's family should be "The Simpsons"
    When I click "New album"
    And I fill in "Title" with "Lisa's renovation"
    And I click "Create album"
    And the last album should have title "Lisa's renovation"
    And the last album should belong to "The Simpsons" family
-   When I click "Log out"
-   Then I should see "Signed out successfully."
-   When I visit the index page
+   Then I click "Log out"
    And I click "Sign up"
-   Then I should be redirected to the "Sign up" page
-   When I fill in "Email" with "sophie@gmail.com"
+   And I fill in "Email" with "sophie@gmail.com"
    And I fill in "Password" with "heythere12"
    And I fill in "Password confirmation" with "heythere12"
-   Then I fill in "Family name" with "The Simpsons"
+   And I fill in "Family name" with "The Simpsons"
    And I click "Sign up" button
-   Then a family should have been created in the database
-   And the new user's family should be "The Simpsons"
-   When I click "Shared albums"
-   Then I should be redirected to the "Shared albums" page
-   And I should not see "Lisa's renovation"
+   And I click "Shared albums"
+   Then I should not see "Lisa's renovation"
+
+ Scenario: User can only see photos connected to her account
+   When I visit the index page
+   And I click "Sign up"
+   And I fill in "Email" with "lisa@gmail.com"
+   And I fill in "Password" with "heythere12"
+   And I fill in "Password confirmation" with "heythere12"
+   And I fill in "Family name" with "The Simpsons"
+   And I click "Sign up" button
+   Then the new user's family should be "The Simpsons"
+   When I click "New album"
+   And I fill in "Title" with "Lisa's renovation"
+   And I click "Create album"
+   And I click "Add photo"
+   And I fill in "Title" with "Something"
+   And I upload file "random.png"
+   And I click "Upload"
+   And I click "Log out"
+   And I click "Sign up"
+   And I fill in "Email" with "sophie@gmail.com"
+   And I fill in "Password" with "heythere12"
+   And I fill in "Password confirmation" with "heythere12"
+   And I fill in "Family name" with "The Simpsons"
+   And I click "Sign up" button
+   And I click "My albums"
+   Then I should not see "random.png"
+   And I should not see "Something"

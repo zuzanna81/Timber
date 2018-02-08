@@ -8,8 +8,8 @@ Given('I am logged in as {string}') do |user_email|
 end
 
 Then('a family should have been created in the database') do
-  @family = Family.last
-  expect(@family).not_to be nil
+  family = Family.last
+  expect(family).not_to be nil
 end
 
 Then("I should see {string} and {string}") do |content, user_email|
