@@ -3,11 +3,11 @@
 
 body {
   text-align: center;
+  background: transparent;
 }
 
-.body-background {
-  background-color: #b7d6aa;
-  padding-bottom: 20rem;
+html {
+  height:100%;
   background: linear-gradient(to bottom, rgb(223, 247, 225), rgb(240, 240, 230));
 }
 
@@ -54,7 +54,7 @@ a {
 .page-header {
   font-size: 3rem;
   font-family: 'Lobster';
-  padding-bottom: 1rem;
+  padding: 1rem;
   color: #69695d;
   text-shadow: 0px 1px 1px #FFF;
 }
