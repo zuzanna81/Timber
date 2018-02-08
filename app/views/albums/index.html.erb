@@ -1,33 +1,31 @@
-<div class="page-header"><h1>Shared albums</h1></div>
-
+<div class="page-header">
+    <h1>Shared albums</h1></div>
 <div class="container">
-	<div class="row">
-		<div class="col-sm-12">
-
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner" role="listbox">
-  	<% @albums.each do |album| %>
-  	<% album.photos.each do |photo| %>
-    <div class="carousel-item active">
-      <%= image_tag photo.image.url.first %>
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <% @albums.each do |album| %>
+                        <% album.photos.each do |photo| %>
+                            <div class="carousel-item active">
+                                <%= image_tag photo.image.url %>
+                            </div>
+                            <div class="carousel-item">
+                                <%= image_tag photo.image.url %>
+                            </div>
+                </div>
+                    <% end %>
+                        <% end %>
+            </div>
+        </div>
     </div>
-    <div class="carousel-item">
-      <%= image_tag photo.image.url %>
-    </div>
-  </div>
-   <% end %>
-  <% end %>
 </div>
-  		</div>
-	</div>
-</div>
-
 <% @albums.each do |album| %>
-	<div class="row justify-content-center">
-	  <div class="col-md-12">
-	    <div class="row">
-				<%= link_to album.title, album_path(album) %>
-	    </div>
-	  </div>
-	</div>
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="row">
+                <%= link_to album.title, album_path(album) %>
+            </div>
+        </div>
+    </div>
 <% end %>
