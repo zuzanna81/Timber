@@ -5,7 +5,7 @@
         <div class="col-md-12">
           <h4 class="lobster">Welcome <%= current_user.email %></h4>
           <div class="media-body">
-            <%= image_tag current_user.avatar.url %>
+            <%= image_tag(current_user.avatar.url(:medium)) %>
           </div>
           <p class="lead" style="padding: 0.5rem"><p>Timber is a private network where you can share your photo albums with your family.
           Start by inviting your family members to Timber.</p>

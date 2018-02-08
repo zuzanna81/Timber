@@ -3,8 +3,10 @@ module HasAttachedAvatar
 
   included do
     has_attached_file :avatar,
-                      styles: { medium: '300x300>',
+                      styles: { medium: '300x300#>',
                                 thumb: '100x100>'},
+                                :default_url => "/images/:style/missing.png",
+
                       storage: :s3,
                       s3_credentials: {
                           bucket: ENV['AWS_BUCKET'],
