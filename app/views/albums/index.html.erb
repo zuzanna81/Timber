@@ -1,13 +1,25 @@
 <div class="page-header"><h1>Shared albums</h1></div>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" role="listbox">
+  	<% @albums.each do |album| %>
+  	<% album.photos.each do |photo| %>
+    <div class="carousel-item active">
+      <%= image_tag photo.image.url.first %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag photo.image.url %>
+    </div>
+  </div>
+   <% end %>
+  <% end %>
+</div>
+
 <% @albums.each do |album| %>
 	<div class="row justify-content-center">
 	  <div class="col-md-12">
 	    <div class="row">
 				<%= link_to album.title, album_path(album) %>
-	      <% album.photos.each do |photo| %>
-	        <%= image_tag photo.image.url, data: { toggle: 'lightbox', gallery: 'example-gallery', title: 'title' }, class: 'col-md-4', class: 'img-fluid', alt: 'title' %>
-	        <%= photo.title %>
-	      <% end %>
 	    </div>
 	  </div>
 	</div>
