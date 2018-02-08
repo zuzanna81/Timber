@@ -6,6 +6,10 @@ When("I upload file {string}") do |file_name|
   attach_file('photo[image]', Rails.root + "spec/fixture/#{file_name}")
 end
 
+When("I upload the file {string}") do |file_name|
+  attach_file('user[avatar]', Rails.root + "spec/fixture/#{file_name}")
+end
+
 And("I should see {string} image") do |file_name|
   expect(page).to have_css("img[src*='#{file_name}']")
 end
