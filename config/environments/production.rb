@@ -61,7 +61,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "timber_#{Rails.env}"
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { :host => "www.yourhost.com" }
+  config.action_mailer.default_url_options = { :host => "https://timber-ca.herokuapp.com" }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -76,9 +76,6 @@ Rails.application.configure do
   password:             ENV['SENDGRID_PASSWORD'],
   authentication:       ENV['SMTP_AUTH'],
   enable_starttls_auto: true  }
-
-  config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: "https://timber-ca.herokuapp.com" }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
