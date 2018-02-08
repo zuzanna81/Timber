@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   belongs_to :family, optional: true
   has_many :albums, through: :family
+  has_many :photos, through: :albums
 
   validates :family, presence: true, unless: :is_invited
 
