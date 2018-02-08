@@ -1,5 +1,9 @@
 <div class="page-header"><h1>Shared albums</h1></div>
 
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner" role="listbox">
   	<% @albums.each do |album| %>
@@ -13,6 +17,9 @@
   </div>
    <% end %>
   <% end %>
+</div>
+  		</div>
+	</div>
 </div>
 
 <% @albums.each do |album| %>
