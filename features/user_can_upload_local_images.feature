@@ -24,7 +24,12 @@ Feature: User can upload attached file
     And I upload file "random.png"
     And I click "Upload"
     And I should see "Successfully created a new photo!"
+    And I fill in "Title" with "Something else"
+    And I upload file "random2.png"
+    And I click "Save to album"
+    Then I should be redirected to the "My albums" page
     And I should see "random.png" image
+    And I should see "random2.png" image
 
   Scenario: User attempts to upload photo without filling in title [Sad path]
     When I upload file "random.png"

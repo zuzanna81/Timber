@@ -14,7 +14,7 @@ class PhotosController < ApplicationController
     @photo = album.photos.new(photo_params)
     if @photo.save
       flash[:notice] = "Successfully created a new photo!"
-      redirect_to photos_path
+      redirect_to new_photo_path
     else
       flash[:alert] = "Error, no photo was created"
       render :new
