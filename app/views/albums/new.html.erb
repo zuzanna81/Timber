@@ -1,8 +1,8 @@
+<div class="page-header"><h1>New album</h1></div>
 <%= form_for @album do |f| %>
-
   <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.text_field :title, class: 'mx-sm-3 mb-2' %>
   </div>
 
 <%= f.submit 'Create album', class: 'btn btn-primary' %>
