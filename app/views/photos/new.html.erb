@@ -5,12 +5,12 @@
   <%= hidden_field_tag :album_id, @album_id %>
   <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.text_field :title, class: 'mx-sm-3 mb-2' %>
   </div>
 
   <div class="form-group">
     <%= f.label :image %>
-    <%= f.file_field :image, class: 'form-control'%>
+    <%= f.file_field :image, class: 'mx-sm-3 mb-2' %>
   </div>
 
   <%= f.submit 'Upload', class: 'btn btn-primary' %>
