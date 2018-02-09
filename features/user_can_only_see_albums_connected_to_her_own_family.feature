@@ -7,6 +7,7 @@ Feature: User can only see photos connected to her account
    When I visit the index page
    And I click "Sign up"
    And I fill in "Email" with "lisa@gmail.com"
+   And I fill in "First name" with "Lisa"
    And I fill in "Password" with "heythere12"
    And I fill in "Password confirmation" with "heythere12"
    And I fill in "Family name" with "The Simpsons"
@@ -20,6 +21,7 @@ Feature: User can only see photos connected to her account
    Then I click "Log out"
    And I click "Sign up"
    And I fill in "Email" with "sophie@gmail.com"
+   And I fill in "First name" with "Lisa"
    And I fill in "Password" with "heythere12"
    And I fill in "Password confirmation" with "heythere12"
    And I fill in "Family name" with "The Simpsons"
@@ -31,6 +33,7 @@ Feature: User can only see photos connected to her account
    When I visit the index page
    And I click "Sign up"
    And I fill in "Email" with "lisa@gmail.com"
+   And I fill in "First name" with "Lisa"
    And I fill in "Password" with "heythere12"
    And I fill in "Password confirmation" with "heythere12"
    And I fill in "Family name" with "The Simpsons"
@@ -46,6 +49,7 @@ Feature: User can only see photos connected to her account
    And I click "Log out"
    And I click "Sign up"
    And I fill in "Email" with "sophie@gmail.com"
+   And I fill in "First name" with "Lisa"
    And I fill in "Password" with "heythere12"
    And I fill in "Password confirmation" with "heythere12"
    And I fill in "Family name" with "The Simpsons"

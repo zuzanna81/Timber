@@ -1,5 +1,8 @@
 class PhotosController < ApplicationController
 
+  before_action :get_album, only: [:create, :destroy, :edit, :update]
+  before_action :get_photo, only: [:destroy, :edit, :update]
+
   def index
     @photos = current_user.photos
   end
@@ -10,7 +13,6 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @album = Album.find(params[:album_id])
     @photo = @album.photos.new(photo_params)
     if @photo.save
       flash[:notice] = 'Successfully created a new photo!'
@@ -26,21 +28,15 @@ class PhotosController < ApplicationController
   end
 
   def destroy
-    @album = Album.find(params[:album_id])
-    @photo = Photo.find(params[:id])
     @photo.destroy
     flash[:success] = 'The photo was deleted.'
     redirect_to album_photos_path(@album)
   end
 
   def edit
-    @album = Album.find(params[:album_id])
-    @photo = Photo.find(params[:id])
   end
 
   def update
-    @album = Album.find(params[:album_id])
-    @photo = Photo.find(params[:id])
     if @photo.update(photo_params)
       flash[:alert] = 'Updated successfully'
       redirect_to album_path(@album)
@@ -53,5 +49,13 @@ class PhotosController < ApplicationController
 
   def photo_params
     params.require(:photo).permit(:title, :image)
+  end
+
+  def get_album
+    @album = Album.find(params[:album_id])
+  end
+
+  def get_photo
+    @photo = Photo.find(params[:id])
   end
 end

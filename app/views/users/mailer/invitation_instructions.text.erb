@@ -1,6 +1,6 @@
 <%= t("devise.mailer.invitation_instructions.hello", email: @resource.email) %>
 
-<%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url) %>
+<%= "You have been invited to the #{@resource.invited_by.family.name.capitalize} family" %>
 
 <%= accept_invitation_url(@resource, :invitation_token => @token) %>
 
