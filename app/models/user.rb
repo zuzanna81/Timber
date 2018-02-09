@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :albums, through: :family
   has_many :photos, through: :albums
 
+  validates_presence_of :first_name
   validates :family, presence: true, unless: :is_invited
 
   devise :invitable, :database_authenticatable, :registerable,

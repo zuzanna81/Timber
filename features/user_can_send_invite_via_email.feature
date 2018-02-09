@@ -27,9 +27,10 @@ Feature: User can send invite to another user via email
     And I should see "Accept invitation" in the email body
     When I click "Accept invitation" in the email
     Then I should be redirected to the "Accept invitation" page
+    And I fill in "First name" with "Zeus"
     And I fill in "Password" with "password"
     And I fill in "Password confirmation" with "password"
-    And I click "Set my password"
+    And I click "Set my first name and password"
     And the new user's family should be "The Simpsons"
     Then I should be redirected to the "index" page
     And I should see "Your password was set successfully. You are now signed in."
