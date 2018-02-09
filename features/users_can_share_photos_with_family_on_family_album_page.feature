@@ -9,8 +9,8 @@ Feature: User can share photos with family
       | The Simpsons |
 
     Given the following user is part of a family
-      | email          | password    | password_confirmation | family       |
-      | lisa@gmail.com | heythere123 | heythere123           | The Simpsons |
+      | email          | first_name | password    | password_confirmation | family       |
+      | lisa@gmail.com | Lisa       | heythere123 | heythere123           | The Simpsons |
 
     Given the following image exist in album
       | title     | image_file_name | album_title       |  family     |

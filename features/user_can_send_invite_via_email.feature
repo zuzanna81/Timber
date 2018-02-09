@@ -10,8 +10,8 @@ Feature: User can send invite to another user via email
       | The Simpsons |
 
     Given the following user is part of a family
-      | email          | password    | password_confirmation | family       |
-      | lisa@gmail.com | heythere123 | heythere123           | The Simpsons |
+      | email          | first_name | password    | password_confirmation | family       |
+      | lisa@gmail.com | Lisa       | heythere123 | heythere123           | The Simpsons |
 
     Given I am logged in as "lisa@gmail.com"
     And I visit the invitation page

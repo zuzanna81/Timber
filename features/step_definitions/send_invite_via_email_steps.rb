@@ -17,7 +17,11 @@ end
 Given('the following user is part of a family') do |table|
   table.hashes.each do |user|
     family = Family.find_by(name: user[:family])
-    create(:user, email: user[:email], family: family)
+    create(:user, email: user[:email],
+                  first_name: user[:first_name],
+                  password: user[:password],
+                  password_confirmation: user[:password_confirmation],
+                  family: family)
   end
 end
 
