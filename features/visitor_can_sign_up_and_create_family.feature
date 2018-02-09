@@ -61,3 +61,10 @@ Feature: Visitor can sign up and create a family during registration process
     And I fill in "Password confirmation" with "heythere12"
     And I click "Sign up" button
     Then I should see "Family can't be blank"
+
+  Scenario: Visitor fills in all fields except first name [Sad Path]
+    When I fill in "Email" with "lisa@gmail.com"
+    And I fill in "Password" with "heythere12"
+    And I fill in "Password confirmation" with "heythere12"
+    And I click "Sign up" button
+    Then I should see "First name can't be blank"
