@@ -6,17 +6,13 @@
    <div class="row"> 
     <div class="col">
       <div align="center" id="myCarousel" class="carousel slide mx-auto" data-ride="carousel"> 
+      <% @recent_photos.each do |photo| %>
         <div class="carousel-inner" role="listbox">
-          <div class="carousel-item active">
-            <%= @photo %> 
-          </div>
           <div class="carousel-item">
-            <img class="d-block img-fluid" src="https://source.unsplash.com/VvtPllEUnhs/800x740"  alt="Second slide">
+            <%= image_tag photo.image.url, class: "d-block image_fluid" %> 
           </div>
-          <div class="carousel-item">
-            <img class="d-block img-fluid" src="https://source.unsplash.com/wN0xm1d3Lp8/800x740" alt="Third slide">
-         </div>
-       </div>
+        </div>
+       <% end %> 
        <div class="col">
         <% @albums.each do |album| %>
          <div class="row justify-content-center" id="albumshared">
@@ -28,5 +24,3 @@
    </div>
   </div>
 </div>
-
- 

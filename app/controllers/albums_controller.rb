@@ -4,6 +4,7 @@ before_action :check_for_family, only: [:create]
 
   def index
     @albums = current_user.family.albums
+    @recent_photos = @albums.map { |a| a.photos }#.flatten.sort_by { |photo| photo.created_at }.last(3) 
   end
 
   def new
