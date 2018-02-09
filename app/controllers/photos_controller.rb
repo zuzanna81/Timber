@@ -37,8 +37,6 @@ class PhotosController < ApplicationController
     if @photo.update(photo_params)
       flash[:alert] = 'Updated successfully'
       redirect_to photos_path
-    else
-      render :edit
     end
   end
 
