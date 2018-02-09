@@ -27,7 +27,7 @@ Feature: User can upload attached file
     And I fill in "Title" with "Something else"
     And I upload file "random2.png"
     And I click "Upload and save to album"
-    Then I should be on th album "Lisa's renovation" page
+    Then I should be on the album "Lisa's renovation" page
     And I should see "random.png" image
     And I should see "random2.png" image
 

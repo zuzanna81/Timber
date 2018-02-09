@@ -26,21 +26,24 @@ class PhotosController < ApplicationController
   end
 
   def destroy
+    @album = Album.find(params[:album_id])
     @photo = Photo.find(params[:id])
     @photo.destroy
     flash[:success] = 'The photo was deleted.'
-    redirect_to photos_path
+    redirect_to album_photos_path(@album)
   end
 
   def edit
+    @album = Album.find(params[:album_id])
     @photo = Photo.find(params[:id])
   end
 
   def update
+    @album = Album.find(params[:album_id])
     @photo = Photo.find(params[:id])
     if @photo.update(photo_params)
       flash[:alert] = 'Updated successfully'
-      redirect_to photos_path
+      redirect_to album_path(@album)
     else
       render :edit
     end

@@ -1,12 +1,12 @@
 <div class="page-header"><h1>My albums</h1></div>
 
-<%= link_to "Add photo", new_album_photo_path(@album) %>
+<%= link_to 'Add photo', new_album_photo_path(@album) %>
 
 <div class="row justify-content-center">
   <div class="col-md-12">
     <div class="row">
       <% @album.photos.each do |photo| %>
-        <%= image_tag photo.image.url, data: { toggle: 'lightbox', gallery: 'example-gallery', title: 'title' }, class: 'col-md-4', class: 'img-fluid', alt: 'title' %>
+        <%= image_tag photo.image.url, data: { toggle: 'lightbox', gallery: 'example-gallery', title: 'title' }, class: 'col-md-4 img-fluid', alt: photo.title %>
         <%= photo.title %>
         <%= link_to 'Delete', album_photo_path(@album, photo), method: :delete, data: {confirm: 'Are you sure?'} %>
         <%= link_to 'Edit title', edit_album_photo_path(@album, photo) %>
