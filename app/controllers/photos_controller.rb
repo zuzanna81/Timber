@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
 
   def index
-    @photos = current_user.photos 
+    @photos = current_user.photos
   end
 
   def new
@@ -37,8 +37,6 @@ class PhotosController < ApplicationController
     if @photo.update(photo_params)
       flash[:alert] = 'Updated successfully'
       redirect_to photos_path
-    else
-      render :edit
     end
   end
 
