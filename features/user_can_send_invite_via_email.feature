@@ -27,6 +27,7 @@ Feature: User can send invite to another user via email
     And I should see "Accept invitation" in the email body
     When I click "Accept invitation" in the email
     Then I should be redirected to the "Accept invitation" page
+    And I fill in "First name" with "Zeus"
     And I fill in "Password" with "password"
     And I fill in "Password confirmation" with "password"
     And I click "Set my password"
