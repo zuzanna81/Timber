@@ -9,8 +9,8 @@ Feature: User can add avatar to profile
       | The Simpsons |
 
     Given the following user is part of a family
-      | email          | password    | password_confirmation | family       |
-      | lisa@gmail.com | heythere123 | heythere123           | The Simpsons |
+      | email          | name | password    | password_confirmation | family       |
+      | lisa@gmail.com | Lisa | heythere123 | heythere123           | The Simpsons |
 
     Given the following image exist in album
       | title     | image_file_name | album_title       |  family     |
@@ -21,7 +21,12 @@ Feature: User can add avatar to profile
 
     Scenario: User can upload an avatar photo to profile
       When I click "Edit profile"
+      And I fill in "Email" with "lisa@gmail.com"
+      And I fill in "First name" with "Lisa"
+      And I fill in "user[current_password]" with "heythere123"
+      Then show me the page
       And I upload the file "random.png"
       And I click "Update"
+      Then show me the page
       And I should see "Your account has been updated successfully."
       And I should see "random.png" image
