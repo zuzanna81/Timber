@@ -44,3 +44,9 @@ Then("the last album should belong to {string} family") do |family_name|
 Then("I should not see {string}") do |content|
   expect(page).not_to have_content content 
 end
+
+
+Then(/^I should be on th album "([^"]*)" page$/) do |album_title|
+  album = Album.find_by(title: album_title)
+  expect(current_path).to eq album_path(album)
+end

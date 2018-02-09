@@ -12,9 +12,9 @@
         <%= link_to 'Home', root_path unless current_page? root_path %>
         <% if current_user %>
         </li>
-        <li class='nav-item'>
-          <%= link_to 'My albums', photos_path unless current_page? photos_path %>
-        </li>
+        <!--<li class='nav-item'>-->
+          <!--<%#= link_to 'My albums', albums_photos_path unless current_page? photos_path %>-->
+        <!--</li>-->
         <li class='nav-item'>
           <%= link_to 'Shared albums', albums_path unless current_page? albums_path %>
         </li>

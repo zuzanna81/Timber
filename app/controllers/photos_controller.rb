@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
 
   def index
-    @photos = current_user.photos 
+    @photos = current_user.photos
   end
 
   def new
@@ -10,13 +10,17 @@ class PhotosController < ApplicationController
   end
 
   def create
-    album = Album.find(params[:album_id])
-    @photo = album.photos.new(photo_params)
+    @album = Album.find(params[:album_id])
+    @photo = @album.photos.new(photo_params)
     if @photo.save
-      flash[:notice] = "Successfully created a new photo!"
-      redirect_to new_photo_path
+      flash[:notice] = 'Successfully created a new photo!'
+      if params.key?(:finish_upload)
+        redirect_to album_path(@album)
+      else
+        redirect_to new_album_photo_path(@album)
+      end
     else
-      flash[:alert] = "Error, no photo was created"
+      flash[:alert] = 'Error, no photo was created'
       render :new
     end
   end
@@ -24,7 +28,7 @@ class PhotosController < ApplicationController
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy
-    flash[:success] = "The photo was deleted."
+    flash[:success] = 'The photo was deleted.'
     redirect_to photos_path
   end
 
