@@ -13,6 +13,6 @@ Then('a family should have been created in the database') do
 end
 
 Then('I should see {string} and {string}') do |content, user_email|
-  user = User.find_by(email: user_email)
+  User.find_by(email: user_email)
   expect(page).to have_content content
 end
