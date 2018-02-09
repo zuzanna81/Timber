@@ -1,8 +1,6 @@
 <div class="page-header"><h1>Upload Photo</h1></div>
-
-<%= form_for @photo do |f| %>
+<%= form_for @photo, url: album_photos_path do |f| %>
   <%= render 'partials/errors', object: @photo %>
-  <%= hidden_field_tag :album_id, @album_id %>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'mx-sm-3 mb-2' %>
@@ -14,4 +12,5 @@
   </div>
 
   <%= f.submit 'Upload', class: 'btn btn-primary' %>
+  <%= f.submit 'Upload and save to album', name: :finish_upload, class: 'btn btn-primary' %>
 <% end %>
