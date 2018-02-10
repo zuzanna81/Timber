@@ -14,20 +14,21 @@ class PhotosController < ApplicationController
 
   def create
     photos = []
-    photo_params[:image].each_with_index do |file, i|
+    photo_params[:image].each do |file|
       @photo = @album.photos.create(title: photo_params[:title], image: file)
       photos.push @photo
-    end
-    if photos.all?(&:valid?)
-      flash[:notice] = set_flash(photos)
+    end if photo_params[:image]
+
+    if photos_present_and_valid?(photos)
+      flash[:notice] = set_success_flash(photos)
       if params.key?(:finish_upload)
         redirect_to album_path(@album)
       else
         redirect_to new_album_photo_path(@album)
       end
     else
-      flash[:alert] = 'Error, no photo was created'
-      render :new
+      flash[:alert] = set_errors_flash(photos)
+      redirect_to new_album_photo_path(@album)
     end
   end
 
@@ -63,7 +64,17 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
   end
 
-  def set_flash(array)
-    array.count == 1 ? 'Successfully created a new photo!' : "Successfully created #{photos.count} photos!"
+  def set_success_flash(array)
+    array.count == 1 ? 'Successfully created a new photo!' : "Successfully created #{array.count} photos!"
+  end
+
+  def set_errors_flash(array)
+    message = 'Error, no photo was created'
+    array.each{ |photo| message += '<br/>' + photo.errors.full_messages.first}
+    message
+  end
+
+  def photos_present_and_valid?(array)
+    array.any? && array.all?(&:valid?)
   end
 end
