@@ -2,7 +2,7 @@
   <h1><%= @album.title.capitalize %></h1>
 </div>
 
-<%= link_to 'Add photo', new_album_photo_path(@album) %>
+<%= link_to 'Add photo', new_album_photo_path(@album), class: 'btn btn-primary' %>
 
 <div class="container-albums-show">
   <div class="row">
