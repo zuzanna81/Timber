@@ -4,15 +4,19 @@
 
 <%= link_to 'Add photo', new_album_photo_path(@album) %>
 
-<div class="row justify-content-center">
-  <div class="col-md-12">
-    <div class="row">
-      <% @album.photos.each do |photo| %>
-        <%= image_tag photo.image.url, data: { toggle: 'lightbox', gallery: 'example-gallery', title: 'title' }, class: 'col-md-4 img-fluid', alt: photo.title %>
-        <%= photo.title %>
-        <%= link_to 'Delete', album_photo_path(@album, photo), method: :delete, data: {confirm: 'Are you sure?'} %>
-        <%= link_to 'Edit title', edit_album_photo_path(@album, photo) %>
-      <% end %>
-    </div>
+<div class="container-albums-show">
+  <div class="row">
+    <% @album.photos.each do |photo| %>
+      <div class="col-md-4">
+        <%= image_tag photo.image.url, data: { toggle: 'lightbox', gallery: 'example-gallery', title: 'title' }, class: 'col-md-4' 'img-fluid', alt: photo.title %>
+        <div class="center-text" style="padding: .5em;">
+          <%= photo.title %>
+          <div class="center-text" style="padding: .5em; font-size: .7em;">
+            <%= link_to 'Delete', album_photo_path(@album, photo), method: :delete, data: {confirm: 'Are you sure?'} %>
+            <%= link_to 'Edit title', edit_album_photo_path(@album, photo) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
