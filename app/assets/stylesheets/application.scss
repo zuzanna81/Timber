@@ -46,6 +46,10 @@ a {
   padding: 1rem 1rem;
 }
 
+.container-albums-show {
+  padding: 1.5rem;
+}
+
 .extra-padding {
   padding: 3rem 3rem;
 }
@@ -201,4 +205,30 @@ a {
   color: #FFF;
   padding: 1em;
   font-size: .75rem;
+}
+
+//Carousel
+
+.carousel-slide .carousel-inner .carousel-item {
+    height: 100vh;
+    min-height: 600px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel-inner > .carousel-item> img {
+    margin: 0 auto;
+    background-position: center center;
+}
+
+.carousel-control-prev {
+    color: #69695d;
+}
+
+#albumshared {
+    font-size: 2rem;
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+    padding-left: 2em;
+    color: #69695d;
 }
