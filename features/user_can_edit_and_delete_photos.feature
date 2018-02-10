@@ -13,8 +13,8 @@ Feature: User can edit and delete photos
       | lisa@gmail.com | Lisa       | heythere123 | heythere123           | The Simpsons |
 
     Given the following image exist in album
-      | title     | image_file_name | album_title       |  family     |
-      | Something | random.png      | Lisa's renovation  | The Simpsons|
+      | title     | image_file_name | album_title       | family       |
+      | Something | random.png      | Lisa's renovation | The Simpsons |
 
     And I am logged in as "lisa@gmail.com"
     When I visit the index page

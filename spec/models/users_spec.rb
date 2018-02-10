@@ -16,6 +16,7 @@ RSpec.describe User, type: :model do
     it {is_expected.to have_db_column :last_sign_in_ip}
     it {is_expected.to have_db_column :created_at}
     it {is_expected.to have_db_column :updated_at}
+
   end
 
   describe 'Validations' do
@@ -53,6 +54,20 @@ RSpec.describe User, type: :model do
 
       it 'response true' do
         expect(subject.has_family?).to eq true
+      end
+    end
+
+    describe '#my_albyms' do
+      let(:other_user) {create(:user)}
+      let!(:album) {create(:album, creator_id: subject.id)}
+      let!(:other_album) {create(:album, creator_id: other_user.id)}
+
+      it 'includes album created by subject' do
+        expect(subject.my_albums).to include(album)
+      end
+
+      it 'excludes album created by other users' do
+        expect(subject.my_albums).not_to include(other_album)
       end
     end
   end
