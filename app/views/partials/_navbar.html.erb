@@ -13,7 +13,7 @@
         <% if current_user %>
         </li>
         <li class='nav-item'>
-          <%= link_to 'My albums' %>
+          <%= link_to 'My albums', albums_path(my_albums: true) %>
         </li>
         <li class='nav-item'>
           <%= link_to 'Shared albums', albums_path unless current_page? albums_path %>
