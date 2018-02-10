@@ -12,7 +12,7 @@ Feature: User can share photos with family
       | email          | first_name | password    | password_confirmation | family       |
       | lisa@gmail.com | Lisa       | heythere123 | heythere123           | The Simpsons |
 
-    Given the following image exist in albums
+    Given the following image exist in album
       | title     | image_file_name | album_title       | family          |
       | Something | random.png      | Lisa's renovation | The Simpsons    |
       | New       | random2.png     | Lisa's cats       | The Simpsons    |
