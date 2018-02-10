@@ -54,6 +54,6 @@ Feature: User can only see photos connected to her account
    And I fill in "Password confirmation" with "heythere12"
    And I fill in "Family name" with "The Simpsons"
    And I click "Sign up" button
-   And I click "My albums"
+   And I click "Shared albums"
    Then I should not see "random.png"
    And I should not see "Something"
