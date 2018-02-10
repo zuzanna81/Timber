@@ -4,7 +4,7 @@
 
 <%= link_to "Add photo", new_photo_path(album_id: @album.id), class: 'btn btn-primary' %>
 
-<div class="container">
+<div class="container-albums-show">
   <div class="row">
     <% @album.photos.each do |photo| %>
       <div class="col-md-4">
