@@ -41,6 +41,10 @@ a {
   padding: 1rem 1rem;
 }
 
+.container {
+  padding: 1.5rem;
+}
+
 .extra-padding {
   padding: 3rem 3rem;
 }
@@ -185,10 +189,10 @@ footer {
 //Carousel
 
 .carousel-slide .carousel-inner .carousel-item {
-    height: 100vh; 
-    min-height: 600px; 
-    background-position: center center; 
-    background-repeat: no-repeat; 
+    height: 100vh;
+    min-height: 600px;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -205,5 +209,5 @@ footer {
     font-size: 2rem;
     font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
     padding-left: 2em;
-    color: #69695d;  
+    color: #69695d;
 }
