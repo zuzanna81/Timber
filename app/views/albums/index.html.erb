@@ -1,14 +1,27 @@
-<div class="page-header"><h1>Shared albums</h1></div>
-<% @albums.each do |album| %>
-	<div class="row justify-content-center">
-	  <div class="col-md-12">
-	    <div class="row-images">
-				<%= link_to album.title, album_path(album) %>
-	      <% album.photos.each do |photo| %>
-	        <%= image_tag photo.image.url, data: { toggle: 'lightbox', gallery: 'example-gallery', title: 'title' }, class: 'col-md-4', class: 'img-fluid', alt: 'title' %>
-	        <%= photo.title %>
-	      <% end %>
-	    </div>
-	  </div>
-	</div>
-<% end %>
+<div class="page-header">
+  <h1>Shared albums</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div align="center" id="myCarousel" class="carousel slide mx-auto" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <% @recent_photos.each do |photo| %>
+            <div class="carousel-item <%= photo == @recent_photos.first ? 'active' : '' %>">
+              <%= image_tag photo.image.url, class: "d-block image_fluid" %>
+            </div>
+          <% end %>
+         </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <% @albums.each do |album| %>
+        <div class="row justify-content-center" id="albumshared">
+          <%= link_to album.title, album_path(album) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
