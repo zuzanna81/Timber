@@ -2,15 +2,23 @@ When('I visit new photo page') do
   visit new_photo_path
 end
 
-When('I upload file {string}') do |file_name|
-  attach_file('photo[image]', Rails.root + "spec/fixture/#{file_name}")
+When("I upload file {string}") do |file_name|
+  attach_file('photo[image][]', Rails.root + "spec/fixture/#{file_name}")
 end
 
-When('I upload the file {string}') do |file_name|
+When("I upload the avatar {string}") do |file_name|
   attach_file('user[avatar]', Rails.root + "spec/fixture/#{file_name}")
 end
 
-And('I should see {string} image') do |file_name|
+When("I upload multiple files: {string}") do |file_names|
+  files_arr = []
+  file_names.split.each do |file_name|
+    files_arr.push Rails.root + "spec/fixture/#{file_name}"
+  end
+  attach_file 'photo[image][]', files_arr
+end
+
+And("I should see {string} image") do |file_name|
   expect(page).to have_css("img[src*='#{file_name}']")
 end
 

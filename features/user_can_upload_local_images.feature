@@ -40,3 +40,13 @@ Feature: User can upload attached file
   Scenario: User attempts to upload photo without filling in Title and choosing a file [Sad path]
     When I click "Upload"
     And I should see "Error, no photo was created"
+
+  Scenario: User can upload multiple file [Happy path]
+    When I fill in "Title" with "Something"
+    And I upload multiple files: "random.png random2.png"
+    And I click "Upload and save to album"
+    And I should see "Successfully created 2 photos!"
+    Then I should be on the album "Lisa's renovation" page
+    And I should see "random.png" image
+    And I should see "random2.png" image
+
