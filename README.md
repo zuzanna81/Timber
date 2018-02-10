@@ -11,10 +11,12 @@ Timber is a platform to share your phots and content together with your family
 * Lisa Eriksson: https://github.com/lcegit
 * Sophie Sjöberg: https://github.com/sophiesjoberg
 * Zuzanna Bienkowska: https://github.com/zuzanna81/
+
 During the project we had help from:
 * https://github.com/magnus-thor/
 * https://github.com/tochman
 * https://github.com/faraznaeem
+* https://github.com/diraulo
 
 ## Technologies
 * Ruby on Rails
@@ -27,9 +29,15 @@ During the project we had help from:
 * Devise
 * devise_invitable
 * Coffee rails
+* Lightbox Bootstrap
+* SendGrid
 
 ## Installation
-_[TODO: Add installation and setup instructions]_
+Download the ZIP file from this repo
+Unzip the file and then open it up via your terminal
+Run `bundle install`, after run `rails db:create db:migrate`
+Run `rails s` and go to http://localhost:3000/
+
 ## Testing
 * Cucumber
 * RSpec
@@ -114,10 +122,5 @@ A full list of Jest Matchers can be found on the [Jest reference docs.](https://
 #### Active Models
 Active Record Models are tested using RSpec (model specs)
 
-_[TODO: Add description of testing strategies. Are you using factories? Shoulda matchers? etc...]_
-
-
-#### API Endpoints
-API endpoints are tested using RSpec (request specs)
-
-_[TODO: Add description of testing strategies. Are you using fixtures? How do you call your url's (using helpers or referencing them a static url's)? etc...]_
+We are using Shoulda matchers to test the expected database tables, validations and permissions.
+We are also allowing, via validations, the objects created by FactoryBot to be tested
