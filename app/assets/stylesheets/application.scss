@@ -6,6 +6,13 @@ body {
   background: transparent;
 }
 
+p {
+    color: #4F544B;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+}
+
 html {
   height:100%;
   background: linear-gradient(to bottom, rgb(223, 247, 225), rgb(240, 240, 230));
@@ -18,11 +25,6 @@ a:hover {
 a {
   color: #4F544B;
   font-weight: bold;
-}
-
-#container {
-   min-height:100%;
-   position:relative;
 }
 
 .h6 {
@@ -46,14 +48,14 @@ a {
   padding: 1rem 1rem;
 }
 
-.container-albums-show {
-  padding: 1.5rem;
-}
-
 .extra-padding {
   padding: 3rem 3rem;
 }
 //Typography
+
+#photo-title {
+  font-family: 'Courier New';
+}
 
 .lobster {
   font-size: 3rem;
