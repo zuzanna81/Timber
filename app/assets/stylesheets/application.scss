@@ -102,6 +102,18 @@ a {
   padding: .5rem 2rem;
 }
 
+.btn-primary {
+    color: #fff;
+    background-color: #44B583;
+    border-color: #44B586;
+  }
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #2b9b69;
+    border-color: #2b9b69;
+}
+
 .form-control {
 
 }
