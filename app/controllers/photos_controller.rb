@@ -13,9 +13,13 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = @album.photos.new(photo_params)
-    if @photo.save
-      flash[:notice] = 'Successfully created a new photo!'
+    photos = []
+    photo_params[:image].each_with_index do |file, i|
+      @photo = @album.photos.create(title: photo_params[:title], image: file)
+      photos.push @photo
+    end
+    if photos.all?(&:valid?)
+      flash[:notice] = set_flash(photos)
       if params.key?(:finish_upload)
         redirect_to album_path(@album)
       else
@@ -48,7 +52,7 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:title, :image)
+    params.require(:photo).permit(:title, image: [])
   end
 
   def get_album
@@ -57,5 +61,9 @@ class PhotosController < ApplicationController
 
   def get_photo
     @photo = Photo.find(params[:id])
+  end
+
+  def set_flash(array)
+    array.count == 1 ? 'Successfully created a new photo!' : "Successfully created #{photos.count} photos!"
   end
 end

@@ -1,5 +1,5 @@
 <div class="page-header"><h1>Upload Photo</h1></div>
-<%= form_for @photo, url: album_photos_path do |f| %>
+<%= form_for @photo, url: album_photos_path, multipart: true do |f| %>
   <%= render 'partials/errors', object: @photo %>
   <div class="form-group">
     <%= f.label :title %>
@@ -8,7 +8,7 @@
 
   <div class="form-group">
     <%= f.label :image %>
-    <%= f.file_field :image, class: 'mx-sm-3 mb-2' %>
+    <%= f.file_field :image, multiple: true, class: 'mx-sm-3 mb-2' %>
   </div>
 
   <%= f.submit 'Upload', class: 'btn btn-primary' %>

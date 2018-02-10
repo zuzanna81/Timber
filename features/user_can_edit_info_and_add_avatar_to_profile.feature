@@ -22,7 +22,7 @@ Feature: User can add avatar to profile
     Scenario: User can upload an avatar photo to profile [Happy path]
       When I click "Edit profile"
       And I fill in "Current password" with "heythere123"
-      And I upload the file "random.png"
+      And I upload the avatar "random.png"
       And I click "Update"
       And I should see "Your account has been updated successfully."
       And I should see "random.png" image
@@ -52,6 +52,6 @@ Feature: User can add avatar to profile
 
     Scenario: User leaves current password blank [Sad path]
       When I click "Edit profile"
-      And I upload the file "random.png"
+      And I upload the avatar "random.png"
       And I click "Update"
       And I should see "Current password can't be blank"
