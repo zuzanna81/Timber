@@ -27,7 +27,8 @@ Feature: User can only see photos connected to her account
    And I fill in "Family name" with "The Simpsons"
    And I click "Sign up" button
    And I click "Shared albums"
-   Then I should not see "Lisa's renovation"
+   Then I should see "Shared albums"
+   And I should not see "Lisa's renovation"
 
  Scenario: User can only see photos connected to her account
    When I visit the index page
@@ -55,5 +56,6 @@ Feature: User can only see photos connected to her account
    And I fill in "Family name" with "The Simpsons"
    And I click "Sign up" button
    And I click "Shared albums"
-   Then I should not see "random.png"
+   Then I should see "Shared albums"
+   And I should not see "random.png"
    And I should not see "Something"

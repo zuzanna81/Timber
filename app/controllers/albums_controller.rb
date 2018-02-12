@@ -3,7 +3,13 @@ class AlbumsController < ApplicationController
 before_action :check_for_family, only: [:create]
 
   def index
-    @albums = current_user.family.albums
+    if params[:my_albums]
+      @albums = current_user.my_albums
+      @title = "My albums"
+    else
+      @albums = current_user.family.albums
+      @title = "Shared albums"
+    end
     @recent_photos = @albums.map(&:photos).flatten.sort_by(&:created_at).last(3)
   end
 
@@ -16,7 +22,7 @@ before_action :check_for_family, only: [:create]
   end
 
   def create
-    @album = Album.new(album_params)
+    @album = Album.new(album_params.merge(creator_id: current_user.id))
     @album.family = current_user.family
     if @album.save
       redirect_to album_path(@album)

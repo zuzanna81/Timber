@@ -23,6 +23,7 @@ Feature: User can share photos with family
   Scenario: User can visit family album page and see shared content
     And I click "Shared albums"
     Then I should be redirected to the "Shared albums" page
+    And I should see "Shared albums"
     And I should see "random.png" image
     And I should see "Lisa's renovation"
     And I should see "Lisa's cats"

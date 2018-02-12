@@ -11,6 +11,10 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def my_albums
+    Album.where(creator_id: self.id)
+  end
+
   def has_family?
   	self.family.present?
   end

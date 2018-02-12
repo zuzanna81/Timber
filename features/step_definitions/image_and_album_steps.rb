@@ -34,9 +34,15 @@ end
 
 Given('the following image exist in album') do |table|
   table.hashes.each do |image|
-    family = Family.find_by(name: image[:family])
-    album = create(:album, title: image[:album_title], family: family)
-    create(:photo, image.except!('album_title', 'family').merge!(album: album))
+    if image[:created_by]
+      creator = User.find_by(email: image[:created_by])
+      family = Family.find_by(name: image[:family])
+      album = create(:album, title: image[:album_title], family: family, creator_id: creator.id)
+    else
+      family = Family.find_by(name: image[:family])
+      album = create(:album, title: image[:album_title], family: family)
+    end
+    create(:photo, image.except!('album_title', 'family', 'created_by').merge!(album: album))
   end
 end
 
