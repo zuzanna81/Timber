@@ -3,6 +3,7 @@
 
 body {
   background: transparent;
+  margin-bottom: 80px;
   text-align: center;
 }
 
@@ -15,7 +16,8 @@ p {
 
 html {
   background: linear-gradient(to bottom, rgb(223, 247, 225), rgb(240, 240, 230));
-  height: 100%;
+  min-height: 100%;
+  position: relative;
 }
 
 a:hover {
@@ -195,10 +197,11 @@ a {
 .footer {
   background-color: #69695d;
   bottom: 0;
+  height: 60px;
   left: 0;
-  line-height: 2rem;
+  // line-height: 60px;
   padding: 1rem;
-  position: fixed;
+  position: absolute;
   right: 0;
   text-align: center;
   width: 100%;

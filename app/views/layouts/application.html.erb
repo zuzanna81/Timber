@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Timber</title>
     <%= csrf_meta_tags %>
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value.html_safe %></div>
+      <div class="alert alert-<%= key %>"><%= value.html_safe %></div>
     <% end %>
 
     <%= javascript_pack_tag 'application' %>
