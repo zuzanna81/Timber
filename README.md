@@ -4,7 +4,17 @@ Final project for Craft Academy October 2017 Cohort.
 
 ## Description
 
-Timber is a platform to share your phots and content together with your family
+Timber is a platform to share your photos and content together with your family.  
+Once you land on the platform (https://timber-ca.herokuapp.com/), you need to register
+(click on `sign up` in the navbar) to use the platform's features.  The registration process
+ requires you to enter email, first name, password, password confirmation and family name.
+  Every user needs to be part of a family to be able to create an album and upload pictures.
+  When the registration process is completed you can create a new album, edit your profile
+data and picture, send an invite via email to another user.  
+When the invited user accept and complete the registration, he/she will automatically be part of your family
+  and will be able to see your already existing albums and create other albums related to the family as well.  
+`My albums` are the albums you created and you can add other pictures to it,
+ `Shared albums` are the albums accesible by you and all the users that are part of your family.  
 
 ## Contributors
 * Francesco Falchi: https://github.com/NegativeKarma
